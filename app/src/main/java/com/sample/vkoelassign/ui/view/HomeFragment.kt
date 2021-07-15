@@ -13,6 +13,7 @@ import com.sample.vkoelassign.ui.viewmodel.XViewModel
 
 class HomeFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentXListBinding
+
     private lateinit var viewModel: XViewModel
 
 
