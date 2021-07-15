@@ -1,5 +1,6 @@
 package com.sample.vkoelassign.ui.view
 
+import HomePagerAdapter
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,9 +11,14 @@ import androidx.lifecycle.ViewModelProvider
 import com.sample.vkoelassign.databinding.FragmentXListBinding
 import com.sample.vkoelassign.ui.viewmodel.XViewModel
 
-class XListFragment : Fragment() {
+class HomeFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentXListBinding
     private lateinit var viewModel: XViewModel
+
+
+    override fun onClick(v: View?) {
+        TODO("Not yet implemented")
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -34,8 +40,13 @@ class XListFragment : Fragment() {
         init()
     }
 
+    /**
+     * View Initialization
+     */
     private fun init() {
-
+        binding.homeViewPager.adapter =
+            HomePagerAdapter(requireContext(), requireActivity().supportFragmentManager)
+        binding.homeTabLayout.setupWithViewPager(binding.homeViewPager)
     }
 
 }

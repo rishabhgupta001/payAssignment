@@ -6,8 +6,10 @@
     <string name="txt_welc_to_xapp">Welcome to pay’s World</string>
 
 
-    <string name="txt_x_list">X List</string>
+    <string name="txt_x_list">Home</string>
 
     <string name="txt_x_detail">X Detail</string>
+    <string name="txt_my_feed">My Feed</string>
+    <string name="txt_my_post">My Post</string>
 
 </resources>
