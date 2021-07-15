@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!--TextInputLayout settings-->
+    <style name="login_TextLabel" parent="Theme.VkoelAssign">
+        <item name="android:textColor">@color/colorFontLighter</item>
+        <item name="android:textColorHint">@color/colorGrey_light</item>
+        <item name="android:textSize">@dimen/_15sdp</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorControlNormal">#515151</item>
+        <item name="colorControlActivated">@color/colorOrangeDark</item>
+        <item name="colorControlHighlight">@color/colorLightOrange</item>
+    </style>
+
+
+    <style name="HintText" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/colorFontLighter</item>
+    </style>
 </resources>

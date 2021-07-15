@@ -1,3 +1,5 @@
+package com.sample.vkoelassign.ui.view.adapter
+
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager

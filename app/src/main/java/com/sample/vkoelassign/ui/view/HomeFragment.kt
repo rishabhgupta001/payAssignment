@@ -1,6 +1,6 @@
 package com.sample.vkoelassign.ui.view
 
-import HomePagerAdapter
+import com.sample.vkoelassign.ui.view.adapter.HomePagerAdapter
 import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment

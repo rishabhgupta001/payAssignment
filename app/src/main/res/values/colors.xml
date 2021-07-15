@@ -9,10 +9,17 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="colorFontDark">#353434</color>
+    <color name="colorBlue">#27397C</color>
     <color name="colorGrayDark">#d0d0d0</color>
     <color name="colorGrayDarkest">#808B96</color>
     <color name="colorHeadLineBg">#000000</color>
     <color name="colorBg">#464646</color>
     <color name="colorDescription">#f2f2f2</color>
     <color name="colorFotterTxt">#bababa</color>
+    <color name="colorFontLighter">#B8B8B8</color>
+    <color name="colorGrey_light">#666666</color>
+    <color name="colorOrangeDark">#FD7719</color>
+    <color name="colorLightOrange">#fcd5a3</color>
+    <color name="line_color">#E3E0DF</color>
+    <color name="colorFontLight">#949494</color>
 </resources>

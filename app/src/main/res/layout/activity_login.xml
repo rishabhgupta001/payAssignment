@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.view.LoginActivity">
+
+    <TextView
+        android:id="@+id/makePlus_welcome_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_60sdp"
+        android:gravity="center"
+        android:text="@string/Welcome"
+        android:textStyle="bold"
+        android:textColor="@color/colorFontDark"
+        android:textSize="@dimen/_13sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_7sdp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/activity_horizontal_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phone_numb_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_enter_mobile_number"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/activity_horizontal_margin">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_enter_passwrd"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:singleLine="true" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <TextView
+            android:id="@+id/forgot_passwrd_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="@string/text_forgot_passwrd"
+            android:textColor="@color/colorGrey_light"
+            android:textSize="@dimen/_11sdp" />
+
+        <Button
+            android:id="@+id/send_otp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/blue_border_shape"
+            android:gravity="center"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingLeft="@dimen/_25sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingRight="@dimen/_25sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:text="@string/otp_message"
+            android:textAllCaps="false"
+            android:textColor="@color/colorGrey_light"
+            android:textSize="@dimen/_13sdp"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/signIn_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:background="@drawable/button_rectangle_shape"
+            android:gravity="center"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingLeft="@dimen/_25sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingRight="@dimen/_25sdp"
+            android:paddingBottom="@dimen/_10sdp"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/_13sdp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/new_user_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:text="@string/text_new_user"
+                android:textColor="@color/colorFontLight"
+                android:textSize="@dimen/_11sdp" />
+
+            <TextView
+                android:id="@+id/signUp_text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:background="?android:attr/selectableItemBackground"
+                android:text="@string/text_sign_up"
+                android:textColor="@color/colorOrangeDark"
+                android:textSize="@dimen/_11sdp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
