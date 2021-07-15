@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav"
+    app:startDestination="@+id/xList_frag">
+
+    <fragment
+        android:id="@+id/xList_frag"
+        android:name="com.sample.vkoelassign.ui.view.XListFragment"
+        android:label="@string/txt_x_list"
+        tools:layout="@layout/fragment_x_list">
+
+        <action
+            android:id="@+id/action_xDetail"
+            app:destination="@id/xDetail_frag"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/xDetail_frag"
+        android:name="com.sample.vkoelassign.ui.view.XDetailFragment"
+        android:label="@string/txt_x_detail"
+        tools:layout="@layout/fragment_x_detail" />
+
+</navigation>
