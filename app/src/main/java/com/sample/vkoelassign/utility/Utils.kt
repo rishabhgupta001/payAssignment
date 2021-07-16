@@ -1,19 +1,24 @@
 package com.sample.vkoelassign.utility
 
-import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
-import java.text.SimpleDateFormat
+import android.util.Log
+import android.util.Patterns
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.core.content.ContextCompat.startActivity
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.sample.vkoelassign.R
+import com.sample.vkoelassign.SplashActivity
+import com.sample.vkoelassign.ui.view.LoginActivity
 
 object Utils {
     /**
@@ -99,4 +104,45 @@ object Utils {
         textView.startAnimation(animFadeIn)
     }
 
+    /**
+     * returns true if mobile number provided is correct
+     */
+    fun isValidMobile(mobile: String?): Boolean {
+        return !mobile.isNullOrEmpty() && (mobile.length in 6..12) && Patterns.PHONE.matcher(
+            mobile
+        ).matches()
+    }
+
+    /**
+     *    1. If number starts with "0" than remove "0" and return number.
+    2. If number starts with "+91" than remove "+91" and return number.
+    3. If number contains any special characters in between than remove that and return number
+     */
+    fun getValidMobileNumber(number: String): String {
+        var number = number.trim()
+        //checking whether mobile number starts with "0"
+        if (number.startsWith("0"))
+            number = number.substring(0, number.length)
+
+        //checking whether mobile number starts with "+91"
+        else if (number.startsWith("+"))
+            number = number.substring(3, number.length)
+
+        number = number.replace("[\\D]".toRegex(), "")
+
+        Log.d("LoginActivity", "number:-  ${number.trim()}")
+        return number.trim()
+    }
+
+    /**
+     * Method to open New Actvity/Screen
+     */
+    fun launchNewActivity(activity: Activity, intent: Intent, clearStack: Boolean) {
+        if (clearStack) {
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+        }
+        activity.startActivity(intent)
+        activity.overridePendingTransition(R.anim.enter_activity, R.anim.exit_activity)
+    }
 }

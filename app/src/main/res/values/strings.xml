@@ -24,11 +24,19 @@
     <string name="login_failed">"Login failed"</string>
     <string name="text_enter_mobile_number">Enter mobile number</string>
     <string name="text_enter_passwrd">Enter Password</string>
+    <string name="text_preset_passwrd">Preset Password</string>
     <string name="text_forgot_passwrd">I don’t have or remember my password</string>
     <string name="text_new_user">New User?</string>
     <string name="text_sign_up">Sign Up</string>
     <string name="otp_message">Send an OTP to verify</string>
     <string name="login">Login</string>
     <string name="Welcome">Welcome</string>
+    <string name="txt_permission_granted">permission is already granted</string>
+    <string name="txt_select_diff_user">Please select different user</string>
+    <string name="txt_until_you">Until you grant the permission, we canot display the names</string>
+    <string name="txt_enter_your">Enter your mobile number below or choose random number from your contacts</string>
+    <string name="txt_open_contacts">Open contacts</string>
+    <string name="txt_pay_passwrd">pay@123</string>
+
 
 </resources>

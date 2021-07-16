@@ -8,27 +8,59 @@
     tools:context=".ui.view.LoginActivity">
 
     <TextView
-        android:id="@+id/makePlus_welcome_textview"
+        android:id="@+id/welcome_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="@dimen/_60sdp"
+        android:layout_marginTop="@dimen/_40sdp"
         android:gravity="center"
         android:text="@string/Welcome"
-        android:textStyle="bold"
         android:textColor="@color/colorFontDark"
         android:textSize="@dimen/_13sdp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/descrpt_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/_7sdp"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:gravity="center"
+        android:text="@string/txt_enter_your"
+        android:textColor="@color/colorFontDark"
+        android:textSize="@dimen/_13sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcome_textview" />
+
+    <TextView
+        android:id="@+id/contacts_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_20sdp"
+        android:background="?android:attr/selectableItemBackground"
+        android:text="@string/txt_open_contacts"
+        android:textColor="@color/colorOrangeDark"
+        android:textSize="@dimen/_11sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descrpt_textview" />
+
     <LinearLayout
+        android:id="@+id/cred_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_7sdp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/contacts_btn"
+        app:layout_constraintVertical_chainStyle="packed">
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -42,6 +74,7 @@
                 android:hint="@string/text_enter_mobile_number"
                 android:imeOptions="actionNext"
                 android:inputType="number"
+                android:maxLength="10"
                 android:maxLines="1"
                 android:singleLine="true" />
 
@@ -50,15 +83,18 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/activity_horizontal_margin">
+            android:layout_margin="@dimen/activity_horizontal_margin"
+            app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pass_edit_Text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/text_enter_passwrd"
+                android:hint="@string/text_preset_passwrd"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
                 android:maxLines="1"
+                android:maxLength="16"
                 android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -97,7 +133,7 @@
             android:visibility="gone" />
 
         <Button
-            android:id="@+id/signIn_btn"
+            android:id="@+id/login_btn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_16sdp"
