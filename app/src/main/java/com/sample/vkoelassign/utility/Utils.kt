@@ -1,14 +1,18 @@
 package com.sample.vkoelassign.utility
 
 import android.app.Activity
+import android.app.Dialog
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
 import android.os.Build
 import android.util.Log
 import android.util.Patterns
 import android.view.View
+import android.view.Window
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
@@ -144,5 +148,22 @@ object Utils {
         }
         activity.startActivity(intent)
         activity.overridePendingTransition(R.anim.enter_activity, R.anim.exit_activity)
+    }
+
+    /**
+     * make and Returns Dialog
+     */
+    fun makeDialog(id: Int, mContext: Context): Dialog {
+        val dialog = Dialog(mContext)
+
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.setContentView(id)
+
+        dialog.setCanceledOnTouchOutside(true)
+        dialog.setCancelable(true)
+        dialog.window!!.getAttributes().windowAnimations = R.style.DialogTheme
+        dialog.show()
+        return dialog
     }
 }

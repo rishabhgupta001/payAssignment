@@ -8,13 +8,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
-import com.sample.vkoelassign.databinding.FragmentXListBinding
-import com.sample.vkoelassign.ui.viewmodel.XViewModel
+import com.sample.vkoelassign.databinding.FragmentHomeBinding
+import com.sample.vkoelassign.ui.viewmodel.LoginViewModel
 
 class HomeFragment : Fragment(), View.OnClickListener {
-    private lateinit var binding: FragmentXListBinding
-
-    private lateinit var viewModel: XViewModel
+    private lateinit var binding: FragmentHomeBinding
+    private lateinit var viewModel: LoginViewModel
 
 
     override fun onClick(v: View?) {
@@ -23,7 +22,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        viewModel = ViewModelProvider(this).get(XViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(LoginViewModel::class.java)
     }
 
     override fun onCreateView(
@@ -31,7 +30,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentXListBinding.inflate(inflater, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
 

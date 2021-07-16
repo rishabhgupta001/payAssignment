@@ -17,14 +17,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:background="@android:color/white"
+            android:background="@color/divider_color"
             app:elevation="8dp"
             app:layout_constraintTop_toTopOf="parent"
             app:tabGravity="fill"
             app:tabMaxWidth="0dp"
             app:tabMode="fixed"
-            app:tabSelectedTextColor="@color/colorFontDark"
-            app:tabTextColor="@color/colorFontDark" />
+            app:tabSelectedTextColor="@color/colorOrangeDark"
+            app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
+            app:tabTextColor="@color/colorOrangeDark" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

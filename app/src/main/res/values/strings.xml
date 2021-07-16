@@ -37,6 +37,10 @@
     <string name="txt_enter_your">Enter your mobile number below or choose random number from your contacts</string>
     <string name="txt_open_contacts">Open contacts</string>
     <string name="txt_pay_passwrd">pay@123</string>
+    <string name="txt_logout">Logout</string>
+    <string name="text_no">No</string>
+    <string name="text_yes">Yes</string>
+    <string name="text_are_u_sure_logout">Are you sure you want to logout?</string>
 
 
 </resources>

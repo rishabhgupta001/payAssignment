@@ -8,22 +8,31 @@ import android.database.Cursor
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
 import android.provider.ContactsContract
 import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.sample.vkoelassign.R
+import com.sample.vkoelassign.application.MyApplication
 import com.sample.vkoelassign.databinding.ActivityLoginBinding
+import com.sample.vkoelassign.network.LoginFormDataModel
+import com.sample.vkoelassign.ui.viewmodel.LoginViewModel
 import com.sample.vkoelassign.utility.Constants.PERMISSIONS_REQUEST_READ_CONTACTS
+import com.sample.vkoelassign.utility.Pref
 import com.sample.vkoelassign.utility.Utils
 import com.sample.vkoelassign.utility.toastShort
 
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityLoginBinding
-    val PICK_CONTACT = 1
-    var isReadPermissionGranted = false
+    private val PICK_CONTACT = 1
+    private var isReadPermissionGranted = false
+    private val viewModel by lazy { ViewModelProvider(this).get(LoginViewModel::class.java) }
+    private var userName: String = ""
 
     override fun onClick(v: View?) {
         when (v?.id) {
@@ -34,10 +43,15 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                     gettingContactsPermission()
             }
             R.id.login_btn -> {
-                val mainIntent = Intent(this@LoginActivity, MainActivity::class.java)
-                startActivity(mainIntent)
-                finish()
-                overridePendingTransition(R.anim.enter_activity, R.anim.exit_activity)
+                binding.loginBtn.isEnabled = false
+                Handler().postDelayed({
+                    binding.loginBtn.isEnabled = true
+                    val dataModel = LoginFormDataModel(
+                        binding.phoneNumbEditText.text.toString(),
+                        binding.passEditText.text.toString(), userName
+                    )
+                    viewModel.validate(dataModel)
+                }, 100)
             }
         }
     }
@@ -55,6 +69,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         binding.loginBtn.setOnClickListener(this)
         // Read and show the contacts
         gettingContactsPermission()
+        observeLoginFormValidationResponseData()
     }
 
     private fun gettingContactsPermission() {
@@ -129,10 +144,33 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                             Log.d("LoginActivity", "hasPhone  else: ${hasPhone}")
                             toastShort(getString(R.string.txt_select_diff_user))
                         }
-                        //var name: String = c.getString(c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME))
+                        userName =
+                            c.getString(c.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME))
                     }
                 }
             }
         }
+    }
+
+    /**
+     * Method to Check Validation of Form Data Filled by User
+     */
+    fun observeLoginFormValidationResponseData() {
+        viewModel.loginFormLiveData.observe(this, Observer {
+            when (it?.isValid) {
+                true -> {
+                    Pref.setString(MyApplication.mInstance, Pref.NAME, it.name)
+                    Pref.setString(MyApplication.mInstance, Pref.PHONE_NUM, it.mobileNum)
+
+                    val mainIntent = Intent(this@LoginActivity, MainActivity::class.java)
+                    startActivity(mainIntent)
+                    finish()
+                    overridePendingTransition(R.anim.enter_activity, R.anim.exit_activity)
+                }
+                false -> {
+                    toastShort(it.error)
+                }
+            }
+        })
     }
 }

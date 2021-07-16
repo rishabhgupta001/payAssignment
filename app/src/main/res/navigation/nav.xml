@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
-    app:startDestination="@+id/xList_frag">
+    app:startDestination="@+id/home_frag">
 
     <fragment
-        android:id="@+id/xList_frag"
+        android:id="@+id/home_frag"
         android:name="com.sample.vkoelassign.ui.view.HomeFragment"
         android:label="@string/txt_x_list"
-        tools:layout="@layout/fragment_x_list">
+        tools:layout="@layout/fragment_home">
 
         <action
             android:id="@+id/action_xDetail"
