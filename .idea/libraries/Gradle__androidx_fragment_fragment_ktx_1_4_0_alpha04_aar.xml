@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: androidx.fragment:fragment-ktx:1.4.0-alpha04@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1d64aeb1eec39688e61071e0fdccf119/jetified-fragment-ktx-1.4.0-alpha04/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1d64aeb1eec39688e61071e0fdccf119/jetified-fragment-ktx-1.4.0-alpha04/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/1d64aeb1eec39688e61071e0fdccf119/jetified-fragment-ktx-1.4.0-alpha04/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9719a29f5c0c2da0025d711a0aa206cd/jetified-fragment-ktx-1.4.0-alpha04/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9719a29f5c0c2da0025d711a0aa206cd/jetified-fragment-ktx-1.4.0-alpha04/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/9719a29f5c0c2da0025d711a0aa206cd/jetified-fragment-ktx-1.4.0-alpha04/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

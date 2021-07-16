@@ -12,10 +12,10 @@ import android.os.Handler
 import android.provider.ContactsContract
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.google.firebase.auth.FirebaseAuth
 import com.sample.vkoelassign.R
 import com.sample.vkoelassign.application.MyApplication
 import com.sample.vkoelassign.databinding.ActivityLoginBinding
@@ -33,6 +33,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private var isReadPermissionGranted = false
     private val viewModel by lazy { ViewModelProvider(this).get(LoginViewModel::class.java) }
     private var userName: String = ""
+    private var mAuth: FirebaseAuth? = null
 
     override fun onClick(v: View?) {
         when (v?.id) {
@@ -65,6 +66,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun init() {
+        mAuth = FirebaseAuth.getInstance()
         binding.contactsBtn.setOnClickListener(this)
         binding.loginBtn.setOnClickListener(this)
         // Read and show the contacts
@@ -172,5 +174,11 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
         })
+    }
+
+    private fun createUserAccount(){
+        val auth: FirebaseAuth = FirebaseAuth.getInstance()
+        auth
+
     }
 }

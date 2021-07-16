@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "514314885704",
+    "project_id": "payassignment-df7db",
+    "storage_bucket": "payassignment-df7db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514314885704:android:d8643418e3e0d0abebd67d",
+        "android_client_info": {
+          "package_name": "com.sample.vkoelassign"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "514314885704-acbksgs72f5710hvkmq5p29p9jljg4bl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClmvTcT5id71nqqgcmad3T6BGC6j3M-z4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "514314885704-acbksgs72f5710hvkmq5p29p9jljg4bl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

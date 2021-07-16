@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import com.sample.vkoelassign.databinding.ActivitySplashBinding
 import com.sample.vkoelassign.ui.view.LoginActivity
+import com.sample.vkoelassign.ui.view.adapter.OtpActivity
 import com.sample.vkoelassign.utility.Utils
 
 class SplashActivity : AppCompatActivity() {
@@ -27,7 +28,8 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed(object : Runnable {
             override fun run() {
                 //val mainIntent = Intent(this@SplashActivity, MainActivity::class.java)
-                val mainIntent = Intent(this@SplashActivity, LoginActivity::class.java)
+                //val mainIntent = Intent(this@SplashActivity, LoginActivity::class.java)
+                val mainIntent = Intent(this@SplashActivity, OtpActivity::class.java)
                 startActivity(mainIntent)
                 finish()
                 overridePendingTransition(R.anim.enter_activity, R.anim.exit_activity)
