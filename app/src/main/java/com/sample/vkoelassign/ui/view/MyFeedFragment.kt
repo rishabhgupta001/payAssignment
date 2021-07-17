@@ -5,17 +5,19 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.sample.vkoelassign.databinding.FragmentXDetailBinding
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.sample.vkoelassign.databinding.FragmentMyFeedBinding
 
 class MyFeedFragment : Fragment() {
-    private lateinit var binding: FragmentXDetailBinding
+    private lateinit var binding: FragmentMyFeedBinding
+    //private lateinit var scrollAdapter: ScrollRecyclerAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        binding = FragmentXDetailBinding.inflate(inflater, container, false)
+        binding = FragmentMyFeedBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -26,7 +28,12 @@ class MyFeedFragment : Fragment() {
     }
 
     private fun init() {
-        arguments?.let {
-        }
+        /*scrollAdapter = ScrollRecyclerAdapter(requireContext(), listData, activity?.supportFragmentManager!!)
+        binding.scrollRecyclerView.adapter = scrollAdapter*/
+
+        val linearLayoutManager = LinearLayoutManager(context)
+        linearLayoutManager.reverseLayout = true
+        linearLayoutManager.stackFromEnd = true
+        binding.recyclerView.layoutManager = linearLayoutManager
     }
 }

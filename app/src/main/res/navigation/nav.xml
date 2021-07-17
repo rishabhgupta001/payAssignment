@@ -24,6 +24,6 @@
         android:id="@+id/xDetail_frag"
         android:name="com.sample.vkoelassign.ui.view.MyFeedFragment"
         android:label="@string/txt_x_detail"
-        tools:layout="@layout/fragment_x_detail" />
+        tools:layout="@layout/fragment_my_feed" />
 
 </navigation>

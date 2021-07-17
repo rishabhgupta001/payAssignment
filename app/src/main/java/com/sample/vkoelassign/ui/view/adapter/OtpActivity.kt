@@ -15,11 +15,14 @@ import com.google.firebase.auth.PhoneAuthCredential
 import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.auth.PhoneAuthProvider.ForceResendingToken
 import com.google.firebase.auth.PhoneAuthProvider.OnVerificationStateChangedCallbacks
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.sample.vkoelassign.R
 import com.sample.vkoelassign.databinding.ActivityLoginBinding
 import com.sample.vkoelassign.databinding.ActivityOtpBinding
 import com.sample.vkoelassign.ui.view.MainActivity
 import com.sample.vkoelassign.utility.toastShort
+import java.sql.DatabaseMetaData
 import java.util.concurrent.TimeUnit
 
 
@@ -31,6 +34,7 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.idBtnGetOtp -> {
+                binding.idEdtOtp.setText("")
                 if (TextUtils.isEmpty(binding.idEdtPhoneNumber.getText().toString())) {
                     toastShort("Please enter a valid phone number")
                 } else {
@@ -72,18 +76,16 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
             if (task.isSuccessful) {
                 // if the code is correct and the task is successful
                 // we are sending our user to new activity.
-                val i = Intent(this@OtpActivity, MainActivity::class.java)
+                binding.progressBar.visibility = View.GONE
+                /*val i = Intent(this@OtpActivity, MainActivity::class.java)
                 startActivity(i)
-                finish()
+                finish()*/
+                saveUserInfo("","","")
             } else {
+                binding.progressBar.visibility = View.GONE
                 // if the code is not correct then we are
                 // displaying an error message to the user.
-                Toast.makeText(
-                    this@OtpActivity,
-                    task.exception?.message,
-                    Toast.LENGTH_LONG
-                )
-                    .show()
+                toastShort("${task.exception?.message}")
             }
         }
     }
@@ -92,6 +94,7 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
     private fun sendVerificationCode(number: String) {
         // this method is used for getting
         // OTP on user phone number.
+        binding.progressBar.visibility = View.VISIBLE
         PhoneAuthProvider.getInstance().verifyPhoneNumber(
             number,
             60,
@@ -108,6 +111,7 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
             // OTP is sent from Firebase
             override fun onCodeSent(s: String, forceResendingToken: ForceResendingToken) {
                 super.onCodeSent(s, forceResendingToken)
+                binding.progressBar.visibility = View.GONE
                 verificationId = s
             }
 
@@ -116,6 +120,7 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
             override fun onVerificationCompleted(phoneAuthCredential: PhoneAuthCredential) {
                 // below line is used for getting OTP code
                 // which is sent in phone auth credentials.
+                binding.progressBar.visibility = View.GONE
                 val code = phoneAuthCredential.smsCode
                 if (code != null) {
                     binding.idEdtOtp.setText(code)
@@ -125,13 +130,47 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
 
             override fun onVerificationFailed(e: FirebaseException) {
                 // displaying error message with firebase exception.
+                binding.progressBar.visibility = View.GONE
                 toastShort("${e.message}")
             }
         }
 
     // below method is use to verify code from Firebase.
     private fun verifyCode(code: String) {
+        binding.progressBar.visibility = View.VISIBLE
         val credential = PhoneAuthProvider.getCredential(verificationId!!, code)
         signInWithCredential(credential)
+    }
+
+    private fun saveUserInfo(fullName: String, userName: String, email: String) {
+        val currentUserId = FirebaseAuth.getInstance().currentUser?.uid
+        val userRef: DatabaseReference = FirebaseDatabase.getInstance().reference.child("Users")
+
+        val userMap = HashMap<String, Any>()
+        userMap["uid"] = currentUserId!!
+        userMap["bio"] = "Hey I feeling glad that I am using Social app"
+        userMap["email"] = "xyz@gmail.com"
+        userMap["fullName"] = "Rishabh Gupta"
+        userMap["userName"] = "RGupta"
+        userMap["image"] =
+            "https://firebasestorage.googleapis.com/v0/b/payassignment-df7db.appspot.com/o/Default%20Images%2Fimg_profile_default.png?alt=media&token=5238b5c6-a317-4b23-a124-737908a8d9e7"
+
+        userRef.child(currentUserId).setValue(userMap)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    toastShort("Account created successfully")
+                    val intent = Intent(this@OtpActivity, MainActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    //binding.progressBar.visibility = View.GONE
+                    // if the code is not correct then we are
+                    // displaying an error message to the user.
+                    toastShort("${task.exception?.message}")
+                    FirebaseAuth.getInstance().signOut()
+                }
+            }
     }
 }

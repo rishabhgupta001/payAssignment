@@ -14,8 +14,10 @@ import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
 import com.sample.vkoelassign.R
 import com.sample.vkoelassign.databinding.ActivityMainBinding
+import com.sample.vkoelassign.ui.view.adapter.OtpActivity
 import com.sample.vkoelassign.utility.Pref
 import com.sample.vkoelassign.utility.Utils
 
@@ -131,10 +133,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
         yesButton.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
             dailog.dismiss()
             Pref.clearPref(this)
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+
+            val mainIntent = Intent(this@MainActivity, OtpActivity::class.java)
+            Utils.launchNewActivity(this@MainActivity, mainIntent, true)
             finish()
         }
     }

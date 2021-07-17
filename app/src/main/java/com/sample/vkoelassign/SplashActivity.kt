@@ -4,8 +4,10 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.google.firebase.auth.FirebaseAuth
 import com.sample.vkoelassign.databinding.ActivitySplashBinding
 import com.sample.vkoelassign.ui.view.LoginActivity
+import com.sample.vkoelassign.ui.view.MainActivity
 import com.sample.vkoelassign.ui.view.adapter.OtpActivity
 import com.sample.vkoelassign.utility.Utils
 
@@ -27,12 +29,17 @@ class SplashActivity : AppCompatActivity() {
         )
         Handler().postDelayed(object : Runnable {
             override fun run() {
-                //val mainIntent = Intent(this@SplashActivity, MainActivity::class.java)
-                //val mainIntent = Intent(this@SplashActivity, LoginActivity::class.java)
-                val mainIntent = Intent(this@SplashActivity, OtpActivity::class.java)
-                startActivity(mainIntent)
-                finish()
-                overridePendingTransition(R.anim.enter_activity, R.anim.exit_activity)
+                if (FirebaseAuth.getInstance().currentUser != null) {
+                    val mainIntent = Intent(this@SplashActivity, MainActivity::class.java)
+                    Utils.launchNewActivity(this@SplashActivity, mainIntent, true)
+                    finish()
+                } else {
+                    //val mainIntent = Intent(this@SplashActivity, MainActivity::class.java)
+                    //val mainIntent = Intent(this@SplashActivity, LoginActivity::class.java)
+                    val mainIntent = Intent(this@SplashActivity, OtpActivity::class.java)
+                    Utils.launchNewActivity(this@SplashActivity, mainIntent, true)
+                    finish()
+                }
             }
         }, 800)
     }

@@ -30,6 +30,7 @@
     <string name="text_sign_up">Sign Up</string>
     <string name="otp_message">Send an OTP to verify</string>
     <string name="login">Login</string>
+    <string name="txt_follow">Follow</string>
     <string name="Welcome">Welcome</string>
     <string name="txt_permission_granted">permission is already granted</string>
     <string name="txt_select_diff_user">Please select different user</string>

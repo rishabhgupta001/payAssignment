@@ -17,7 +17,7 @@
         android:theme="@style/Theme.VkoelAssign"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.view.adapter.OtpActivity"></activity>
+        <activity android:name=".ui.view.adapter.OtpActivity"/>
         <activity android:name=".ui.view.LoginActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
