@@ -26,4 +26,16 @@
         android:label="@string/txt_x_detail"
         tools:layout="@layout/fragment_my_feed" />
 
+    <fragment
+        android:id="@+id/search_frag"
+        android:name="com.sample.vkoelassign.ui.view.SearchFragment"
+        android:label="@string/title_search"
+        tools:layout="@layout/fragment_search" />
+
+    <fragment
+        android:id="@+id/addPost_frag"
+        android:name="com.sample.vkoelassign.ui.view.AddNewPostFragment"
+        android:label="@string/title_add_post"
+        tools:layout="@layout/fragment_add_new_post" />
+
 </navigation>

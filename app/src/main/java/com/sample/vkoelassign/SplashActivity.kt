@@ -6,9 +6,8 @@ import android.os.Bundle
 import android.os.Handler
 import com.google.firebase.auth.FirebaseAuth
 import com.sample.vkoelassign.databinding.ActivitySplashBinding
-import com.sample.vkoelassign.ui.view.LoginActivity
 import com.sample.vkoelassign.ui.view.MainActivity
-import com.sample.vkoelassign.ui.view.adapter.OtpActivity
+import com.sample.vkoelassign.ui.view.OtpActivity
 import com.sample.vkoelassign.utility.Utils
 
 class SplashActivity : AppCompatActivity() {

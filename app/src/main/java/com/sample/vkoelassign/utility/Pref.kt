@@ -12,6 +12,7 @@ object Pref {
     const val EMAIL_ID = "user_email_id"
     const val NAME = "user_name"
     const val PHONE_NUM = "phone_num"
+    const val PROFILE_ID = "_profileid"
 
     private lateinit var sharedPreferences: SharedPreferences
 

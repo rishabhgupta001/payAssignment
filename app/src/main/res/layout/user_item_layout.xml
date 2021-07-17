@@ -4,8 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
-    android:paddingTop="@dimen/_15sdp"
-    android:paddingBottom="@dimen/_20sdp"
+    android:layout_marginStart="@dimen/_60sdp"
+    android:layout_marginEnd="@dimen/_60sdp"
+    android:layout_marginTop="@dimen/_7sdp"
+    android:layout_marginBottom="@dimen/_7sdp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <de.hdodenhof.circleimageview.CircleImageView
@@ -70,7 +72,7 @@
 
     <Button
         android:id="@+id/follow_btn"
-        android:layout_width="@dimen/_90sdp"
+        android:layout_width="wrap_content"
         android:layout_height="@dimen/_35sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:text="@string/txt_follow"

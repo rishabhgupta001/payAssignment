@@ -42,6 +42,8 @@
     <string name="text_no">No</string>
     <string name="text_yes">Yes</string>
     <string name="text_are_u_sure_logout">Are you sure you want to logout?</string>
+    <string name="title_search">Search</string>
+    <string name="title_add_post">Add Post</string>
 
 
 </resources>

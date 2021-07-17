@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import com.sample.vkoelassign.R
 import com.sample.vkoelassign.databinding.FragmentMyPostBinding
-import com.sample.vkoelassign.databinding.FragmentXDetailBinding
 
 class MyPostFragment : Fragment() {
     private lateinit var binding: FragmentMyPostBinding

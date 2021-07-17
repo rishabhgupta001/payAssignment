@@ -51,12 +51,12 @@ class SearchFragment : Fragment() {
         userAdapter = context?.let { UserAdapter(it, mUser as ArrayList<User>, true) }
         binding.recyclerView.adapter = userAdapter
 
-        view.search_edit_text.addTextChangedListener(object : TextWatcher {
+        binding.searchEditText.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                if (view.search_edit_text.text.toString() == "") {
+                if (binding.searchEditText.text.toString() == "") {
 
                 } else {
                     binding.recyclerView.visibility = View.VISIBLE
@@ -76,7 +76,7 @@ class SearchFragment : Fragment() {
     private fun searchUser(input: String) {
         val query = FirebaseDatabase.getInstance().getReference()
             .child("Users")
-            .orderByChild("fullname")
+            .orderByChild("fullName")
             .startAt(input)
             .endAt(input + "\uf8ff")
 
@@ -104,7 +104,7 @@ class SearchFragment : Fragment() {
         val usersRef = FirebaseDatabase.getInstance().getReference().child("Users")
         usersRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
-                if (view?.search_edit_text?.text.toString() == "") {
+                if (binding.searchEditText.text.toString() == "") {
                     mUser?.clear()
 
                     for (snapshot in dataSnapshot.children) {

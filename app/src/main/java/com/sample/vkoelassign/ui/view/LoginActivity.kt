@@ -110,7 +110,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun phoneNumberPicker() {
-        val intent = Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI);
+        val intent = Intent(Intent.ACTION_PICK, ContactsContract.Contacts.CONTENT_URI)
         startActivityForResult(intent, PICK_CONTACT)
         binding.phoneNumbEditText.setText("")
     }

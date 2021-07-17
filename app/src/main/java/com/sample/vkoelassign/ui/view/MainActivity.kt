@@ -15,11 +15,16 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.sample.vkoelassign.R
 import com.sample.vkoelassign.databinding.ActivityMainBinding
-import com.sample.vkoelassign.ui.view.adapter.OtpActivity
+import com.sample.vkoelassign.network.User
 import com.sample.vkoelassign.utility.Pref
 import com.sample.vkoelassign.utility.Utils
+import de.hdodenhof.circleimageview.CircleImageView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var binding: ActivityMainBinding
@@ -53,6 +58,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             R.id.nav_logout -> {
                 showConfirmationDialog()
             }
+
+            /* R.id.search_frag -> {
+                 //showConfirmationDialog()
+             }*/
         }
     }
 
@@ -112,11 +121,29 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     private fun setUpHeaderView() {
         headerViewLayout = binding.navigationView.getHeaderView(0)
-        //Set Header User Name
-        headerViewLayout.findViewById<TextView>(R.id.nav_username_text_view).text =
-            Pref.getString(this, Pref.NAME, "")
-        headerViewLayout.findViewById<TextView>(R.id.nav_user_phone_num_text_view).text =
-            Pref.getString(this, Pref.PHONE_NUM, "")
+
+        val usersRef = FirebaseDatabase.getInstance().getReference().child("Users")
+            .child(FirebaseAuth.getInstance().currentUser!!.uid)
+
+        usersRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(p0: DataSnapshot) {
+                if (p0.exists()) {
+                    val user = p0.getValue<User>(User::class.java)
+                    headerViewLayout.findViewById<TextView>(R.id.nav_username_text_view).text =
+                        user?.fullName
+                    headerViewLayout.findViewById<TextView>(R.id.nav_user_phone_num_text_view).text =
+                        user?.mobileNum
+                    Utils.setImage(
+                        headerViewLayout.findViewById<CircleImageView>(R.id.profile_image_view),
+                        user?.image!!
+                    )
+                }
+            }
+            override fun onCancelled(p0: DatabaseError) {
+            }
+        })
+
+
     }
 
     /**
