@@ -142,8 +142,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             override fun onCancelled(p0: DatabaseError) {
             }
         })
-
-
     }
 
     /**

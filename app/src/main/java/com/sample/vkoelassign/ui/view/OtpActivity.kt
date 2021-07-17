@@ -70,10 +70,10 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
                 // if the code is correct and the task is successful
                 // we are sending our user to new activity.
                 binding.progressBar.visibility = View.GONE
-                /*val i = Intent(this@OtpActivity, MainActivity::class.java)
+                val i = Intent(this@OtpActivity, MainActivity::class.java)
                 startActivity(i)
-                finish()*/
-                saveUserInfo("","","")
+                finish()
+                //saveUserInfo("","","")
             } else {
                 binding.progressBar.visibility = View.GONE
                 // if the code is not correct then we are
@@ -145,7 +145,8 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
         userMap["email"] = "xyz@gmail.com"
         userMap["fullName"] = "ajay gupta"
         userMap["userName"] = "ajaygupta"
-        userMap["image"] = "https://firebasestorage.googleapis.com/v0/b/payassignment-df7db.appspot.com/o/Default%20Images%2Flaptop_2.jpg?alt=media&token=d41f3103-f463-4afc-b183-53182cf5f686"
+        userMap["image"] =
+            "https://firebasestorage.googleapis.com/v0/b/payassignment-df7db.appspot.com/o/Default%20Images%2Flaptop_2.jpg?alt=media&token=d41f3103-f463-4afc-b183-53182cf5f686"
 
         userRef.child(currentUserId).setValue(userMap)
             .addOnCompleteListener { task ->

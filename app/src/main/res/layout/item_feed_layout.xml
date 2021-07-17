@@ -14,7 +14,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
         <LinearLayout
             android:id="@+id/linear1"
             android:layout_width="match_parent"
@@ -47,7 +46,8 @@
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/img_profile_default" />
+            android:src="@drawable/img_profile_default"
+            android:contentDescription="@null" />
 
 
         <RelativeLayout
