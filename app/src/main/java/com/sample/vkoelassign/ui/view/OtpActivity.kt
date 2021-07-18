@@ -152,6 +152,9 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
                     toastShort("Account created successfully")
+
+                    //makeUserFollowItself(currentUserId)
+
                     val intent = Intent(this@OtpActivity, MainActivity::class.java)
                     intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
@@ -165,5 +168,18 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
                     FirebaseAuth.getInstance().signOut()
                 }
             }
+    }
+
+    /**
+     * This method will allow user to follow themselves
+     *
+     * In user feed or User Timeline all post(to which he/she is following) along with this particular user post will be visible
+     */
+    private fun makeUserFollowItself(currentUserId: String) {
+        val followingRef = FirebaseDatabase.getInstance().reference
+            .child("Follow").child(currentUserId)
+            .child("Following").child(currentUserId)
+            .setValue(true)
+
     }
 }

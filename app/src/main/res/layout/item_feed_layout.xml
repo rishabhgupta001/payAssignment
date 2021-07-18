@@ -31,11 +31,11 @@
                 android:id="@+id/user_name_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
                 android:layout_marginTop="14dp"
-                android:text="user name"
+                android:text="username"
                 android:textColor="@color/colorDarkGrey"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
         </LinearLayout>
@@ -45,10 +45,9 @@
             android:id="@+id/post_image_home"
             android:layout_width="match_parent"
             android:layout_height="220dp"
+            android:contentDescription="@null"
             android:scaleType="centerCrop"
-            android:src="@drawable/img_profile_default"
-            android:contentDescription="@null" />
-
+            android:src="@drawable/img_profile_default" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -58,26 +57,29 @@
 
             <ImageView
                 android:id="@+id/post_image_like_btn"
-                android:layout_width="41dp"
-                android:layout_height="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@null"
                 android:src="@drawable/img_like" />
 
             <ImageView
                 android:id="@+id/post_image_comment_btn"
-                android:layout_width="40dp"
-                android:layout_height="34dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="6dp"
                 android:layout_marginTop="3dp"
                 android:layout_toEndOf="@+id/post_image_like_btn"
+                android:contentDescription="@null"
                 android:src="@drawable/img_comments" />
 
             <ImageView
                 android:id="@+id/post_save_comment_btn"
-                android:layout_width="40dp"
-                android:layout_height="39dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginTop="0dp"
-                android:layout_marginRight="3dp"
+                android:layout_marginEnd="3dp"
+                android:contentDescription="@null"
                 android:src="@drawable/img_save" />
 
         </RelativeLayout>
@@ -89,7 +91,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:textColor="@color/colorDarkGrey"
-            android:textSize="15dp"
+            android:textSize="@dimen/_15sdp"
             android:textStyle="bold" />
 
         <TextView
@@ -98,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:textColor="@color/colorDarkGrey"
-            android:textSize="15dp"
+            android:textSize="@dimen/_15sdp"
             android:textStyle="bold" />
 
         <TextView
@@ -107,7 +109,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:textColor="@color/colorDarkGrey"
-            android:textSize="15dp" />
+            android:textSize="@dimen/_15sdp" />
 
         <TextView
             android:id="@+id/comments"
@@ -118,7 +120,7 @@
             android:layout_marginBottom="5dp"
             android:text=""
             android:textColor="@color/colorDarkGrey"
-            android:textSize="16dp" />
+            android:textSize="@dimen/_16sdp" />
 
 
     </LinearLayout>
