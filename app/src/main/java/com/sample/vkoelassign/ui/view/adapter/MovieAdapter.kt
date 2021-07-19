@@ -53,12 +53,16 @@ class MovieAdapter(
             Utils.setImage(itemBinding.postImageHome, data.postImage)
             itemBinding.description.text = data.postDescription
             setData(itemBinding, data)
-            Log.e("MovieAdapter","postId:- ${data.postId}   publisherId:- ${data.postPublisher}")
+            Log.e("MovieAdapter", "postId:- ${data.postId}   publisherId:- ${data.postPublisher}")
+
+
+            //addComments(data)
+            getCommentsCount(itemBinding, data)
         }
     }
 
     private fun setData(itemBinding: ItemMovieBinding, data: Post) {
-        val usersRef = FirebaseDatabase.getInstance().getReference().child("Users")
+        val usersRef = FirebaseDatabase.getInstance().reference.child("Users")
             .child(data.postPublisher)
 
         usersRef.addValueEventListener(object : ValueEventListener {
@@ -76,47 +80,31 @@ class MovieAdapter(
         })
     }
 
-    private fun onClick() {
-        mPost[mPosition].let {
-            /*val action = HomeFragmentDirections.actionPostDetail()
-            //val action = MyFeedFragmentDirections.actionPostDetail()
-            action.post = mPost[mPosition]
-            Navigation.findNavController(mContext as Activity, R.id.nav_host_fragment).navigate(action)*/
+    private fun addComments(data: Post) {
+        val commentsRef = FirebaseDatabase.getInstance().reference
+            .child("Comments")
+            .child(data.postId)
 
-            /*val mainIntent = Intent(mContext, PostDetailActivity::class.java)
-            Utils.launchNewActivity(mContext as Activity, mainIntent, false)*/
-        }
+        val commentsMap = HashMap<String, Any>()
+        commentsMap["comment"] = "Awesome"
+        commentsMap["publisher"] = FirebaseAuth.getInstance().currentUser?.uid!!
+        commentsRef.push().setValue(commentsMap)
+    }
 
+    private fun getCommentsCount(itemBinding: ItemMovieBinding, data: Post) {
+        val commentsRef = FirebaseDatabase.getInstance().reference
+            .child("Comments")
+            .child(data.postId)
 
-        /*init {
-
-            itemBinding.itemLayout.setOnClickListener {
-                itemView.isEnabled = false
-                Handler().postDelayed({
-                    itemView.isEnabled = true
-
-                    it.context.toastShort("item row clicked")
-                    Log.e("vvv", "item clicked")
-
-                    mPost[mPosition].let {
-                        *//*val action = HomeFragmentDirections.actionPostDetail()
-                        //val action = MyFeedFragmentDirections.actionPostDetail()
-                        action.post = mPost[mPosition]
-                        Navigation.findNavController(mContext as Activity, R.id.nav_host_fragment).navigate(action)*//*
-
-                        val mainIntent = Intent(mContext, PostDetailActivity::class.java)
-                        Utils.launchNewActivity(mContext as Activity, mainIntent, false)
-                    }
-
-                }, 100)
+        commentsRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    val commentsCount:String = "view all ${dataSnapshot.childrenCount} comments"
+                    itemBinding.comments.setText(commentsCount)
+                }
             }
-
-            itemBinding.commentImgView.setOnClickListener {
-
-                it.context.toastShort("commentImgView clicked")
-                Log.e("vvv", "commentImgView clicked")
+            override fun onCancelled(p0: DatabaseError) {
             }
-        }*/
-
+        })
     }
 }

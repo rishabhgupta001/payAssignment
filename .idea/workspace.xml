@@ -39,13 +39,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5de3429-efa3-4717-90ba-e125ea1f6b48" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/CommentsFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/PostDetailActivity.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/PostDetailFragment.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/adapter/MovieAdapter2.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_post_detail.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_comments.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_post_detail.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -56,23 +49,16 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/network/Post.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/network/Post.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/HomeFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/CommentsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/CommentsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/MyFeedFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/MyFeedFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/adapter/HomePagerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/adapter/HomePagerAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/PostDetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/PostDetailFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/adapter/MovieAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/adapter/MovieAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/adapter/MyFeedAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/adapter/MyFeedAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/utility/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/utility/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_comments.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_comments.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_feed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_my_feed.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_feed_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_feed_layout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/item_movie.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_movie.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
@@ -337,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626594732968</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="MyFeed Work Done [Bug Not Solved]">
+      <created>1626681156849</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1626681156849</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -374,17 +367,18 @@
     <MESSAGE value="AddPostFeature Added" />
     <MESSAGE value="Feed screen worf [half]" />
     <MESSAGE value="MyFeed Work Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="MyFeed Work Done" />
+    <MESSAGE value="MyFeed Work Done [Bug Not Solved]" />
+    <option name="LAST_COMMIT_MESSAGE" value="MyFeed Work Done [Bug Not Solved]" />
   </component>
   <component name="WindowStateProjectService">
     <state x="267" y="19" key="#Inspections" timestamp="1626506499971">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="267" y="19" key="#Inspections/0.0.1280.680@0.0.1280.680" timestamp="1626506499971" />
-    <state x="432" y="56" key="#com.intellij.ide.util.MemberChooser" timestamp="1626610480483">
+    <state x="432" y="56" key="#com.intellij.ide.util.MemberChooser" timestamp="1626709177092">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="432" y="56" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1626610480483" />
+    <state x="432" y="56" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1626709177092" />
     <state x="420" y="132" key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog" timestamp="1626532302850">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -409,10 +403,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="432" y="87" key="AndroidProcessChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1626606396425" />
-    <state x="276" y="0" key="CommitChangelistDialog2" timestamp="1626594729674">
+    <state x="276" y="0" key="CommitChangelistDialog2" timestamp="1626681153042">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="276" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1626594729674" />
+    <state x="276" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1626681153042" />
     <state width="416" height="438" key="DebuggerActiveHint" timestamp="1626671688422">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -429,22 +423,22 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="515" y="238" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" timestamp="1626346601384" />
-    <state width="1237" height="205" key="GridCell.Tab.0.bottom" timestamp="1626679290266">
+    <state width="1237" height="251" key="GridCell.Tab.0.bottom" timestamp="1626704106490">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="205" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1626679290266" />
-    <state width="1237" height="205" key="GridCell.Tab.0.center" timestamp="1626679290266">
+    <state width="1237" height="251" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1626704106490" />
+    <state width="1237" height="251" key="GridCell.Tab.0.center" timestamp="1626704106490">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="205" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1626679290266" />
-    <state width="1237" height="205" key="GridCell.Tab.0.left" timestamp="1626679290266">
+    <state width="1237" height="251" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1626704106490" />
+    <state width="1237" height="251" key="GridCell.Tab.0.left" timestamp="1626704106489">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="205" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1626679290266" />
-    <state width="1237" height="205" key="GridCell.Tab.0.right" timestamp="1626679290266">
+    <state width="1237" height="251" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1626704106489" />
+    <state width="1237" height="251" key="GridCell.Tab.0.right" timestamp="1626704106490">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="205" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1626679290266" />
+    <state width="1237" height="251" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1626704106490" />
     <state width="1237" height="148" key="GridCell.Tab.1.bottom" timestamp="1626671929928">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -465,10 +459,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1626443152819" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1626594734475">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1626681158369">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1626594734475" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1626681158369" />
     <state x="452" y="118" key="chooseDestDirectoryDialog" timestamp="1626503850795">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -477,6 +471,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="458" y="254" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1626420501927" />
+    <state x="57" y="0" width="1064" height="616" key="dock-window-1" timestamp="1626707443233">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="57" y="0" width="1064" height="616" key="dock-window-1/0.0.1280.680@0.0.1280.680" timestamp="1626707443233" />
     <state x="346" y="73" width="589" height="534" key="find.popup" timestamp="1626610455373">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -532,11 +530,6 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/SearchFragment.kt</url>
           <line>93</line>
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/ui/view/adapter/MyFeedAdapter.kt</url>
-          <line>41</line>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

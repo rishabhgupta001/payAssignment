@@ -18,23 +18,21 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_comment"
+            app:destination="@id/comment_frag"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
     </fragment>
 
     <fragment
         android:id="@+id/myfeed_frag"
         android:name="com.sample.vkoelassign.ui.view.MyFeedFragment"
         android:label="@string/txt_my_feed"
-        tools:layout="@layout/fragment_my_feed">
-
-        <action
-            android:id="@+id/action_postDetail"
-            app:destination="@id/postDetail_frag"
-            app:enterAnim="@anim/slide_in_left"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_right" />
-
-    </fragment>
+        tools:layout="@layout/fragment_my_feed" />
 
     <fragment
         android:id="@+id/search_frag"
@@ -53,6 +51,18 @@
         android:name="com.sample.vkoelassign.ui.view.PostDetailFragment"
         android:label="@string/title_post_detail"
         tools:layout="@layout/fragment_post_detail">
+        <argument
+            android:name="Post"
+            android:defaultValue="@null"
+            app:argType="com.sample.vkoelassign.network.Post"
+            app:nullable="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/comment_frag"
+        android:name="com.sample.vkoelassign.ui.view.CommentsFragment"
+        android:label="@string/title_comment"
+        tools:layout="@layout/fragment_comments">
         <argument
             android:name="Post"
             android:defaultValue="@null"

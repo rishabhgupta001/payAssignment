@@ -6,13 +6,30 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.database.FirebaseDatabase
 import com.sample.vkoelassign.R
 import com.sample.vkoelassign.databinding.FragmentCommentsBinding
 import com.sample.vkoelassign.network.Post
 import com.sample.vkoelassign.ui.view.adapter.MovieAdapter
+import com.sample.vkoelassign.utility.Utils
+import com.sample.vkoelassign.utility.toastShort
 
-class CommentsFragment : Fragment() {
+class CommentsFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentCommentsBinding
+    private var itemData: Post? = null
+
+    override fun onClick(v: View?) {
+        when (v?.id) {
+            R.id.add_btn -> {
+                if(!binding.addCommentEditText.text.isNullOrEmpty())
+                addComments(itemData!!)
+                else
+                    context?.toastShort("Please enter comment")
+            }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +47,27 @@ class CommentsFragment : Fragment() {
     }
 
     private fun init() {
+        binding.addBtn.setOnClickListener(this)
+
+        arguments?.let {
+            itemData = CommentsFragmentArgs.fromBundle(it).post
+            Utils.setImage(binding.detailImgView, itemData?.postImage!!)
+        }
+
     }
+
+    private fun addComments(data: Post) {
+        val commentsRef = FirebaseDatabase.getInstance().reference
+            .child("Comments")
+            .child(data.postId)
+
+        val commentsMap = HashMap<String, Any>()
+        commentsMap["comment"] = binding.addCommentEditText.text.toString()
+        commentsMap["publisher"] = FirebaseAuth.getInstance().currentUser?.uid!!
+        commentsRef.push().setValue(commentsMap)
+
+        binding.addCommentEditText.text.clear()
+    }
+
 
 }

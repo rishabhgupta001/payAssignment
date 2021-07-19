@@ -12,13 +12,15 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.sample.vkoelassign.databinding.FragmentMyFeedBinding
+import com.sample.vkoelassign.databinding.ItemMovieBinding
 import com.sample.vkoelassign.network.Post
 import com.sample.vkoelassign.ui.view.adapter.MovieAdapter
 import com.sample.vkoelassign.ui.view.adapter.MovieAdapter2
+import com.sample.vkoelassign.ui.view.adapter.MyFeedAdapter
 
 class MyFeedFragment : Fragment() {
     private lateinit var binding: FragmentMyFeedBinding
-    private var feedAdapter: MovieAdapter? = null
+    private var feedAdapter: MyFeedAdapter? = null
     private var postList: MutableList<Post>? = null
     private var followingList: MutableList<Post>? = null
 
@@ -38,16 +40,13 @@ class MyFeedFragment : Fragment() {
     }
 
     private fun init() {
-        /*binding.feedRecyclerView.layoutManager = LinearLayoutManager(context)
-        binding.feedRecyclerView.adapter = MovieAdapter2()*/
-
         val linearLayoutManager = LinearLayoutManager(context)
         linearLayoutManager.reverseLayout = true
         linearLayoutManager.stackFromEnd = true
         binding.feedRecyclerView.layoutManager = linearLayoutManager
 
         postList = ArrayList()
-        feedAdapter = context?.let { MovieAdapter(it, postList as ArrayList<Post>) }
+        feedAdapter = context?.let { MyFeedAdapter(it, postList as ArrayList<Post>) }
         binding.feedRecyclerView.adapter = feedAdapter
 
         checkFollowings()
@@ -101,9 +100,7 @@ class MyFeedFragment : Fragment() {
 
                         feedAdapter?.notifyDataSetChanged()
                     }
-                    snapshot.key?.let { (followingList as ArrayList<String>).add(it) }
                 }
-                retrievePost()
             }
 
             override fun onCancelled(p0: DatabaseError) {

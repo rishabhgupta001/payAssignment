@@ -1,10 +1,10 @@
 package com.sample.vkoelassign.ui.view.adapter
 
 import android.content.Context
-import android.util.Log
+import android.os.Handler
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -12,12 +12,11 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
-import com.sample.vkoelassign.R
 import com.sample.vkoelassign.databinding.ItemFeedLayoutBinding
 import com.sample.vkoelassign.network.Post
 import com.sample.vkoelassign.network.User
+import com.sample.vkoelassign.ui.view.HomeFragmentDirections
 import com.sample.vkoelassign.utility.Utils
-import com.sample.vkoelassign.utility.toastShort
 
 class MyFeedAdapter(
     private var mContext: Context,
@@ -26,68 +25,55 @@ class MyFeedAdapter(
     private var firebaseUser: FirebaseUser? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyFeedViewHolder {
-       /* val itemBinding =
+        val itemBinding =
             ItemFeedLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return MyFeedViewHolder(itemBinding)*/
-
-        val view = LayoutInflater.from(mContext).inflate(R.layout.item_feed_layout, parent, false)
-        return MyFeedViewHolder(view)
+        return MyFeedViewHolder(itemBinding)
     }
 
     override fun onBindViewHolder(holder: MyFeedViewHolder, position: Int) {
         firebaseUser = FirebaseAuth.getInstance().currentUser
-        //holder.bind(position)
-
-        holder.itemView.setOnClickListener {
-            Log.e("vvv", "itemCard clicked")
-            it.context.toastShort("itemCard clicked")
-        }
+        holder.bind(position)
     }
 
-    override fun getItemCount(): Int = 10
+    override fun getItemCount(): Int = mPost.size
 
-    inner class MyFeedViewHolder(private var itemBinding: View) :
-        RecyclerView.ViewHolder(itemBinding) {
+    inner class MyFeedViewHolder(private var itemBinding: ItemFeedLayoutBinding) :
+        RecyclerView.ViewHolder(itemBinding.root) {
 
-/*        init {
-            itemBinding.setOnClickListener {
-                *//*itemView.isEnabled = false
+        init {
+            itemView.setOnClickListener {
+                itemView.isEnabled = false
                 Handler().postDelayed({
-                    itemView.isEnabled = true*//*
+                    itemView.isEnabled = true
 
-                Log.e("vvv", "itemCard clicked")
-                it.context.toastShort("itemCard clicked")
-
-                *//*mPost[adapterPosition].let {
-                    val action = HomeFragmentDirections.actionPostDetail()
-                    //action.post = it
-                    Navigation.findNavController(itemBinding.root).navigate(action)
-                }*//*
-
-                //}, 100)
+                    mPost[adapterPosition].let {
+                        val action = HomeFragmentDirections.actionPostDetail()
+                        action.post = it
+                        Navigation.findNavController(itemBinding.root).navigate(action)
+                    }
+                }, 100)
             }
 
-
-          *//*  itemBinding.commentImgView.setOnClickListener {
-                it.context.toastShort("postImageCommentBtn clicked")
-                *//**//*itemView.isEnabled = false
+            itemBinding.commentImgView.setOnClickListener {
+                itemBinding.commentImgView.isEnabled = false
                 Handler().postDelayed({
-                    itemView.isEnabled = true*//**//*
+                    itemBinding.commentImgView.isEnabled = true
 
-                *//**//*mPost[adapterPosition].let {
-                    val action = HomeFragmentDirections.actionPostDetail()
-                    //action.post = it
-                    Navigation.findNavController(itemBinding.root).navigate(action)
-                }*//**//*
-
-                //}, 100)
-            }*//*
-        }*/
+                    mPost[adapterPosition].let {
+                        val action = HomeFragmentDirections.actionComment()
+                        action.post = it
+                        Navigation.findNavController(itemBinding.root).navigate(action)
+                    }
+                }, 100)
+            }
+        }
 
         fun bind(position: Int) {
             val data = mPost[position]
-            //Utils.setImage(itemBinding.postImageHome, data.postImage)
-            //setData(itemBinding, data)
+            itemBinding.description.text = data.postDescription
+            Utils.setImage(itemBinding.postImageHome, data.postImage)
+            setData(itemBinding, data)
+            getCommentsCount(itemBinding, data)
         }
     }
 
@@ -98,10 +84,28 @@ class MyFeedAdapter(
         usersRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0.exists()) {
-                    /*val user = p0.getValue<User>(User::class.java)
+                    val user = p0.getValue<User>(User::class.java)
                     itemBinding.userNameSearch.text = user?.userName
                     itemBinding.publisher.text = user?.fullName
-                    Utils.setImage(itemBinding.userProfileImageSearch, user?.image!!)*/
+                    Utils.setImage(itemBinding.userProfileImageSearch, user?.image!!)
+                }
+            }
+
+            override fun onCancelled(p0: DatabaseError) {
+            }
+        })
+    }
+
+    private fun getCommentsCount(itemBinding: ItemFeedLayoutBinding, data: Post) {
+        val commentsRef = FirebaseDatabase.getInstance().reference
+            .child("Comments")
+            .child(data.postId)
+
+        commentsRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    val commentsCount = "view all ${dataSnapshot.childrenCount} comments"
+                    itemBinding.comments.setText(commentsCount)
                 }
             }
 
