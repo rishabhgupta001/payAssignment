@@ -97,11 +97,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     binding.toolbar.title = ""
                 }
 
-                R.id.xDetail_frag -> {
+                R.id.myfeed_frag -> {
                     Utils.showFadeInAnimOnText(
                         this,
                         binding.toolbarTitle,
-                        getString(R.string.txt_x_detail)
+                        getString(R.string.txt_my_feed)
                     )
                     binding.toolbar.title = ""
                     binding.toolbar.setNavigationIcon(R.drawable.img_arrow_back_white)

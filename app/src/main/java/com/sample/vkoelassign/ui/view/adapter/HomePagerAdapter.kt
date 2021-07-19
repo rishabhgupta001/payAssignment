@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import com.sample.vkoelassign.R
 import com.sample.vkoelassign.ui.view.MyFeedFragment
 import com.sample.vkoelassign.ui.view.MyPostFragment
+import com.sample.vkoelassign.ui.view.SearchFragment
 
 class HomePagerAdapter(private val context: Context, fm: FragmentManager) :
     FragmentStatePagerAdapter(fm) {
@@ -16,6 +17,7 @@ class HomePagerAdapter(private val context: Context, fm: FragmentManager) :
         when (position) {
             0 -> {
                 fragment = MyFeedFragment()
+                //fragment = SearchFragment()
                 /* val bundle = Bundle()
                  bundle.putBoolean("show_disconnect", false)
                  fragment.arguments = bundle*/
@@ -41,7 +43,7 @@ class HomePagerAdapter(private val context: Context, fm: FragmentManager) :
     /**
      * Method to set Title to Tabs
      */
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence {
         return if (position == 0) {
             context.getString(R.string.txt_my_feed)
         } else {

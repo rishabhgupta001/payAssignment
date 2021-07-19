@@ -13,13 +13,12 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.sample.vkoelassign.databinding.FragmentMyFeedBinding
 import com.sample.vkoelassign.network.Post
-import com.sample.vkoelassign.network.User
-import com.sample.vkoelassign.ui.view.adapter.MyFeedAdapter
-import com.sample.vkoelassign.ui.view.adapter.UserAdapter
+import com.sample.vkoelassign.ui.view.adapter.MovieAdapter
+import com.sample.vkoelassign.ui.view.adapter.MovieAdapter2
 
 class MyFeedFragment : Fragment() {
     private lateinit var binding: FragmentMyFeedBinding
-    private var myFeedAdapter: MyFeedAdapter? = null
+    private var feedAdapter: MovieAdapter? = null
     private var postList: MutableList<Post>? = null
     private var followingList: MutableList<Post>? = null
 
@@ -39,14 +38,17 @@ class MyFeedFragment : Fragment() {
     }
 
     private fun init() {
+        /*binding.feedRecyclerView.layoutManager = LinearLayoutManager(context)
+        binding.feedRecyclerView.adapter = MovieAdapter2()*/
+
         val linearLayoutManager = LinearLayoutManager(context)
         linearLayoutManager.reverseLayout = true
         linearLayoutManager.stackFromEnd = true
-        binding.recyclerView.layoutManager = linearLayoutManager
+        binding.feedRecyclerView.layoutManager = linearLayoutManager
 
         postList = ArrayList()
-        myFeedAdapter = context?.let { MyFeedAdapter(it, postList as ArrayList<Post>) }
-        binding.recyclerView.adapter = myFeedAdapter
+        feedAdapter = context?.let { MovieAdapter(it, postList as ArrayList<Post>) }
+        binding.feedRecyclerView.adapter = feedAdapter
 
         checkFollowings()
     }
@@ -97,12 +99,13 @@ class MyFeedFragment : Fragment() {
                             postList?.add(post)
                         }
 
-                        myFeedAdapter?.notifyDataSetChanged()
+                        feedAdapter?.notifyDataSetChanged()
                     }
                     snapshot.key?.let { (followingList as ArrayList<String>).add(it) }
                 }
                 retrievePost()
             }
+
             override fun onCancelled(p0: DatabaseError) {
             }
         })

@@ -12,8 +12,8 @@
         tools:layout="@layout/fragment_home">
 
         <action
-            android:id="@+id/action_xDetail"
-            app:destination="@id/xDetail_frag"
+            android:id="@+id/action_postDetail"
+            app:destination="@id/postDetail_frag"
             app:enterAnim="@anim/slide_in_left"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_right"
@@ -21,10 +21,20 @@
     </fragment>
 
     <fragment
-        android:id="@+id/xDetail_frag"
+        android:id="@+id/myfeed_frag"
         android:name="com.sample.vkoelassign.ui.view.MyFeedFragment"
-        android:label="@string/txt_x_detail"
-        tools:layout="@layout/fragment_my_feed" />
+        android:label="@string/txt_my_feed"
+        tools:layout="@layout/fragment_my_feed">
+
+        <action
+            android:id="@+id/action_postDetail"
+            app:destination="@id/postDetail_frag"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/search_frag"
@@ -37,5 +47,17 @@
         android:name="com.sample.vkoelassign.ui.view.AddNewPostFragment"
         android:label="@string/title_add_post"
         tools:layout="@layout/fragment_add_new_post" />
+
+    <fragment
+        android:id="@+id/postDetail_frag"
+        android:name="com.sample.vkoelassign.ui.view.PostDetailFragment"
+        android:label="@string/title_post_detail"
+        tools:layout="@layout/fragment_post_detail">
+        <argument
+            android:name="Post"
+            android:defaultValue="@null"
+            app:argType="com.sample.vkoelassign.network.Post"
+            app:nullable="true" />
+    </fragment>
 
 </navigation>

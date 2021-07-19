@@ -11,14 +11,9 @@ import androidx.lifecycle.ViewModelProvider
 import com.sample.vkoelassign.databinding.FragmentHomeBinding
 import com.sample.vkoelassign.ui.viewmodel.LoginViewModel
 
-class HomeFragment : Fragment(), View.OnClickListener {
+class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var viewModel: LoginViewModel
-
-
-    override fun onClick(v: View?) {
-        TODO("Not yet implemented")
-    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

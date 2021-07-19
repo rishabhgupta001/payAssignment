@@ -30,7 +30,7 @@ object Utils {
      */
     fun setImage(imageView: ImageView, imageUrl: String) {
         Glide.with(imageView).load(imageUrl)
-            .override(200, 200)
+            .override(100, 100)
             .placeholder(R.drawable.ic_launcher_background)
             .error(R.drawable.placeholder_products)
             .into(imageView)

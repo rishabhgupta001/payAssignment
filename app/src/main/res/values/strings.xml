@@ -44,6 +44,7 @@
     <string name="text_are_u_sure_logout">Are you sure you want to logout?</string>
     <string name="title_search">Search</string>
     <string name="title_add_post">Add Post</string>
+    <string name="title_post_detail">Post Detail</string>
 
 
 </resources>

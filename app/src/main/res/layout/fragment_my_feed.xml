@@ -7,11 +7,12 @@
     tools:context=".ui.view.MyFeedFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/feed_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:overScrollMode="never"
-        android:scrollbars="none" />
+        android:nestedScrollingEnabled="false"
+        android:layout_marginTop="@dimen/_3sdp"
+        android:layout_marginBottom="@dimen/_3sdp"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
