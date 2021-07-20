@@ -61,11 +61,7 @@ class UserAdapter(
             checkFollowingStatus(user.uid, followButton)
 
             itemView.setOnClickListener(View.OnClickListener {
-                Pref.setString(MyApplication.mInstance, Pref.PROFILE_ID, user.uid)
-
                 it.context.toastShort("Clicked On Item:-  Open Profile Fragment")
-                /*(mContext as FragmentActivity).supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, ProfileFragment()).commit()*/
             })
 
             followButton.setOnClickListener {

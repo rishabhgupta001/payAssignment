@@ -38,6 +38,7 @@ class MyFeedFragment : Fragment() {
     }
 
     private fun init() {
+        binding.progressBar.visibility = View.VISIBLE
         val linearLayoutManager = LinearLayoutManager(context)
         linearLayoutManager.reverseLayout = true
         linearLayoutManager.stackFromEnd = true
@@ -96,6 +97,7 @@ class MyFeedFragment : Fragment() {
                             postList?.add(post)
                         }
                         feedAdapter?.notifyDataSetChanged()
+                        binding.progressBar.visibility = View.GONE
                     }
                 }
             }
@@ -103,10 +105,5 @@ class MyFeedFragment : Fragment() {
             override fun onCancelled(p0: DatabaseError) {
             }
         })
-    }
-
-    override fun onResume() {
-        super.onResume()
-        context?.toastShort("on Resume called")
     }
 }

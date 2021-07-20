@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-<!--search_frag-->
+
     <group
         android:id="@+id/group_setting"
         android:checkableBehavior="single">
@@ -11,11 +11,6 @@
             android:id="@+id/home_frag"
             android:icon="@drawable/logout"
             android:title="@string/txt_x_list" />
-
-        <item
-            android:id="@+id/myfeed_frag"
-            android:icon="@drawable/logout"
-            android:title="@string/txt_my_feed" />
         <item
             android:id="@+id/search_frag"
             android:icon="@drawable/logout"

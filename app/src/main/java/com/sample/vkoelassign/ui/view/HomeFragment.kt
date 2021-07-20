@@ -1,15 +1,17 @@
 package com.sample.vkoelassign.ui.view
 
-import com.sample.vkoelassign.ui.view.adapter.HomePagerAdapter
 import android.content.Context
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.sample.vkoelassign.databinding.FragmentHomeBinding
+import com.sample.vkoelassign.ui.view.adapter.HomePagerAdapter
 import com.sample.vkoelassign.ui.viewmodel.LoginViewModel
+import com.sample.vkoelassign.utility.toastShort
+
 
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
@@ -40,8 +42,15 @@ class HomeFragment : Fragment() {
      */
     private fun init() {
         binding.homeViewPager.adapter =
-            HomePagerAdapter(requireContext(), requireActivity().supportFragmentManager)
+            HomePagerAdapter(requireContext(), childFragmentManager)
         binding.homeTabLayout.setupWithViewPager(binding.homeViewPager)
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        context?.toastShort("Home on Resume called")
+        init()
     }
 
 }

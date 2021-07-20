@@ -69,7 +69,9 @@ class MyFeedAdapter(
 
         fun bind(position: Int) {
             val data = mPost[position]
-            itemBinding.description.text = data.postDescription
+
+            Utils.showFadeInAnimOnText(mContext, itemBinding.description, data.postDescription)
+            //itemBinding.description.text = data.postDescription
             Utils.setImage(itemBinding.postImageHome, data.postImage)
             setData(itemBinding, data)
             getCommentsCount(itemBinding, data)
@@ -84,9 +86,12 @@ class MyFeedAdapter(
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0.exists()) {
                     val user = p0.getValue<User>(User::class.java)
-                    itemBinding.userNameSearch.text = user?.userName
-                    itemBinding.publisher.text = user?.fullName
-                    Utils.setImage(itemBinding.userProfileImageSearch, user?.image!!)
+
+                    Utils.showSlideDownAnimOnText(mContext, itemBinding.userNameSearch, user?.userName!!)
+                    //itemBinding.userNameSearch.text = user?.userName
+                    Utils.showSlideDownAnimOnText(mContext, itemBinding.publisher, user.fullName)
+                    //itemBinding.publisher.text = user?.fullName
+                    Utils.setImage(itemBinding.userProfileImageSearch, user.image)
                 }
             }
 
@@ -114,7 +119,8 @@ class MyFeedAdapter(
                         commentsCount = ""
 
                     }
-                    itemBinding.comments.setText(commentsCount)
+                    //itemBinding.comments.setText(commentsCount)
+                    Utils.showBounceAnimOnText(mContext, itemBinding.comments, commentsCount)
                 }
             }
 

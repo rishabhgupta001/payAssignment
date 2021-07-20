@@ -42,7 +42,8 @@ class PostDetailFragment : Fragment() {
         arguments?.let {
             data = PostDetailFragmentArgs.fromBundle(it).post!!
 
-            binding.descriptionTextView.text = data.postDescription
+            //binding.descriptionTextView.text = data.postDescription
+            Utils.showFadeInAnimOnText(requireContext(), binding.descriptionTextView, data.postDescription)
             Utils.setImage(binding.postImgView, data.postImage)
             setData(binding, data)
         }
@@ -68,9 +69,11 @@ class PostDetailFragment : Fragment() {
             override fun onDataChange(p0: DataSnapshot) {
                 if (p0.exists()) {
                     val user = p0.getValue<User>(User::class.java)
-                    itemBinding.profileNameTextView.text = user?.userName
-                    itemBinding.publisher.text = user?.fullName
-                    Utils.setImage(itemBinding.profileImgView, user?.image!!)
+                    //itemBinding.profileNameTextView.text = user?.userName
+                    Utils.showSlideDownAnimOnText(requireContext(), itemBinding.profileNameTextView, user?.userName!!)
+                    //itemBinding.publisher.text = user?.fullName
+                    Utils.showSlideDownAnimOnText(requireContext(), itemBinding.publisher, user.fullName)
+                    Utils.setImage(itemBinding.profileImgView, user.image)
                 }
             }
 

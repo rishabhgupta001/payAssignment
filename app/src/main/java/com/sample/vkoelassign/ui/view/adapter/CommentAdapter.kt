@@ -41,7 +41,8 @@ class CommentAdapter(
 
         fun bind(position: Int) {
             val data = mComment[position]
-            itemBinding.commentTextView.text = data.comment
+            //itemBinding.commentTextView.text = data.comment
+            Utils.showBounceAnimOnText(mContext, itemBinding.commentTextView, data.comment)
             setData(itemBinding, data)
         }
     }
