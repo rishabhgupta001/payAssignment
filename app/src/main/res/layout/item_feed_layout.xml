@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_5sdp"
-    android:elevation="@dimen/_5sdp"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardElevation="@dimen/_2sdp"
     app:layout_constraintTop_toTopOf="parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,7 +29,7 @@
             android:layout_marginTop="14dp"
             android:text="username"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="@dimen/_12sdp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/user_profile_image_search"
             app:layout_constraintTop_toTopOf="parent" />
@@ -54,22 +55,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/post_image_home" />
 
-        <!-- <TextView
-             android:id="@+id/likes"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginStart="10dp"
-             android:textColor="@color/colorDarkGrey"
-             android:textSize="@dimen/_15sdp"
-             android:textStyle="bold" />-->
-
         <TextView
             android:id="@+id/publisher"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:textColor="@color/black"
-            android:textSize="15sp"
+            android:textSize="@dimen/_11sdp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/comment_img_view" />
@@ -79,10 +71,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:textColor="@color/black"
-            android:textSize="15sp"
-            android:maxLines="2"
             android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_11sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/publisher" />
 
@@ -93,8 +85,8 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:textColor="@color/purple_500"
-            android:textSize="15sp"
+            android:textColor="@color/purple_700"
+            android:textSize="@dimen/_11sdp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/description" />
 

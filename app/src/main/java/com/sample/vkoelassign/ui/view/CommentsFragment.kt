@@ -5,14 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.FirebaseDatabase
 import com.sample.vkoelassign.R
 import com.sample.vkoelassign.databinding.FragmentCommentsBinding
 import com.sample.vkoelassign.network.Post
-import com.sample.vkoelassign.ui.view.adapter.MovieAdapter
 import com.sample.vkoelassign.utility.Utils
 import com.sample.vkoelassign.utility.toastShort
 

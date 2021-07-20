@@ -3,6 +3,7 @@ package com.sample.vkoelassign.ui.view.adapter
 import android.content.Context
 import android.os.Handler
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
@@ -22,7 +23,6 @@ class MyFeedAdapter(
     private var mContext: Context,
     private var mPost: List<Post>
 ) : RecyclerView.Adapter<MyFeedAdapter.MyFeedViewHolder>() {
-    private var firebaseUser: FirebaseUser? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyFeedViewHolder {
         val itemBinding =
@@ -31,7 +31,6 @@ class MyFeedAdapter(
     }
 
     override fun onBindViewHolder(holder: MyFeedViewHolder, position: Int) {
-        firebaseUser = FirebaseAuth.getInstance().currentUser
         holder.bind(position)
     }
 
@@ -104,7 +103,17 @@ class MyFeedAdapter(
         commentsRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    val commentsCount = "view all ${dataSnapshot.childrenCount} comments"
+                    var commentsCount = ""
+                    if (dataSnapshot.childrenCount.toInt() == 1) {
+                        commentsCount = "${dataSnapshot.childrenCount} comment"
+                    }
+                    if (dataSnapshot.childrenCount.toInt() >= 1) {
+                        commentsCount = "${dataSnapshot.childrenCount} comments"
+                    }
+                    if (dataSnapshot.childrenCount.toInt() == 0) {
+                        commentsCount = ""
+
+                    }
                     itemBinding.comments.setText(commentsCount)
                 }
             }

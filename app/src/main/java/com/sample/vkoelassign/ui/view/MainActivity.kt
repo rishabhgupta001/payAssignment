@@ -106,6 +106,26 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     binding.toolbar.title = ""
                     binding.toolbar.setNavigationIcon(R.drawable.img_arrow_back_white)
                 }
+
+                R.id.postDetail_frag -> {
+                    Utils.showFadeInAnimOnText(
+                        this,
+                        binding.toolbarTitle,
+                        getString(R.string.title_post_detail)
+                    )
+                    binding.toolbar.title = ""
+                    binding.toolbar.setNavigationIcon(R.drawable.img_arrow_back_white)
+                }
+
+                R.id.comment_frag -> {
+                    Utils.showFadeInAnimOnText(
+                        this,
+                        binding.toolbarTitle,
+                        getString(R.string.title_comment)
+                    )
+                    binding.toolbar.title = ""
+                    binding.toolbar.setNavigationIcon(R.drawable.img_arrow_back_white)
+                }
             }
         }
     }
@@ -139,6 +159,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                     )
                 }
             }
+
             override fun onCancelled(p0: DatabaseError) {
             }
         })

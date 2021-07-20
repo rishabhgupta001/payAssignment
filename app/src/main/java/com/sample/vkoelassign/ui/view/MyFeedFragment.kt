@@ -12,11 +12,9 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.sample.vkoelassign.databinding.FragmentMyFeedBinding
-import com.sample.vkoelassign.databinding.ItemMovieBinding
 import com.sample.vkoelassign.network.Post
-import com.sample.vkoelassign.ui.view.adapter.MovieAdapter
-import com.sample.vkoelassign.ui.view.adapter.MovieAdapter2
 import com.sample.vkoelassign.ui.view.adapter.MyFeedAdapter
+import com.sample.vkoelassign.utility.toastShort
 
 class MyFeedFragment : Fragment() {
     private lateinit var binding: FragmentMyFeedBinding
@@ -97,7 +95,6 @@ class MyFeedFragment : Fragment() {
                         if (post?.postPublisher == id) {
                             postList?.add(post)
                         }
-
                         feedAdapter?.notifyDataSetChanged()
                     }
                 }
@@ -106,5 +103,10 @@ class MyFeedFragment : Fragment() {
             override fun onCancelled(p0: DatabaseError) {
             }
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        context?.toastShort("on Resume called")
     }
 }
