@@ -1,9 +1,11 @@
 package com.sample.vkoelassign.onboarding.view
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.FirebaseException
 import com.google.firebase.auth.FirebaseAuth
@@ -34,22 +36,31 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
     private var mAuth: FirebaseAuth? = null
     private var verificationId: String? = null
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.idBtnGetOtp -> {
-                binding.idEdtOtp.setText("")
-                if (!Utils.isValidMobile(binding.idEdtPhoneNumber.getText().toString()))
-                    toastShort("Please enter a valid phone number")
-                else {
-                    val phone = "+91" + binding.idEdtPhoneNumber.getText().toString()
-                    sendVerificationCode(phone)
+                if (Utils.isInternetAvailable(this@OtpActivity)) {
+                    binding.idEdtOtp.setText("")
+                    if (!Utils.isValidMobile(binding.idEdtPhoneNumber.getText().toString()))
+                        toastShort("Please enter a valid phone number")
+                    else {
+                        val phone = "+91" + binding.idEdtPhoneNumber.getText().toString()
+                        sendVerificationCode(phone)
+                    }
+                } else {
+                    this.toastShort(getString(R.string.text_make_sure_no_data_connection))
                 }
             }
             R.id.idBtnVerify -> {
-                if (TextUtils.isEmpty(binding.idEdtOtp.getText().toString())) {
-                    toastShort("Please enter OTP")
+                if (Utils.isInternetAvailable(this@OtpActivity)) {
+                    if (TextUtils.isEmpty(binding.idEdtOtp.getText().toString())) {
+                        toastShort("Please enter OTP")
+                    } else {
+                        verifyCode(binding.idEdtOtp.getText().toString())
+                    }
                 } else {
-                    verifyCode(binding.idEdtOtp.getText().toString())
+                    this.toastShort(getString(R.string.text_make_sure_no_data_connection))
                 }
             }
         }

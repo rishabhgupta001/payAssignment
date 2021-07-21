@@ -44,42 +44,19 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.7.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/SplashActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/SplashActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/application/MyApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/application/MyApplication.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/Api.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/Api.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/Comment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/Comment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/LoginFormDataModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/LoginFormDataModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/NetworkConnectionInterceptor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/NetworkConnectionInterceptor.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/NetworkState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/NetworkState.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/Post.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/Post.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/StatusCode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/StatusCode.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/network/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/preference/Pref.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/data/preference/Pref.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/AddNewPostFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/AddNewPostFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/CommentsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/CommentsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/HomeFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/HomeFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/MyFeedFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/MyFeedFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/MyPostFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/MyPostFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/PostDetailActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/PostDetailFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/PostDetailFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/SearchFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/SearchFragment.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/adapter/CommentAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/adapter/CommentAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/adapter/HomePagerAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/adapter/HomePagerAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/adapter/MyFeedAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/adapter/MyFeedAdapter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/adapter/UserAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/home/view/adapter/UserAdapter.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/onboarding/view/LoginActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/onboarding/view/LoginActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/onboarding/view/OtpActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/onboarding/view/OtpActivity.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/onboarding/viewmodel/LoginViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/onboarding/viewmodel/LoginViewModel.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/utility/ApiException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/utility/ApiException.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/utility/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/utility/Constants.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/utility/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/utility/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/utility/toastShort.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/sample/vkoelassign/utility/toastShort.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_post_detail.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/test.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -534,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1626851698172</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Comments added">
+      <created>1626854509583</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1626854509583</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -578,7 +562,8 @@
     <MESSAGE value="Bugs Fixing on Home Screen" />
     <MESSAGE value="RePackaging" />
     <MESSAGE value="Basic Test Cases" />
-    <option name="LAST_COMMIT_MESSAGE" value="Basic Test Cases" />
+    <MESSAGE value="Comments added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Comments added" />
   </component>
   <component name="WindowStateProjectService">
     <state x="267" y="19" key="#Inspections" timestamp="1626506499971">
@@ -625,10 +610,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="432" y="87" key="AndroidProcessChooserDialog/0.0.1280.680@0.0.1280.680" timestamp="1626772826076" />
-    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1626851694122">
+    <state x="0" y="0" key="CommitChangelistDialog2" timestamp="1626854504077">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1626851694122" />
+    <state x="0" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1626854504077" />
     <state width="440" height="438" key="DebuggerActiveHint" timestamp="1626772992662">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -645,46 +630,46 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="515" y="238" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" timestamp="1626346601384" />
-    <state width="1237" height="211" key="GridCell.Tab.0.bottom" timestamp="1626851875263">
+    <state width="1237" height="148" key="GridCell.Tab.0.bottom" timestamp="1626858060957">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="211" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1626851875263" />
-    <state width="1237" height="211" key="GridCell.Tab.0.center" timestamp="1626851875262">
+    <state width="1237" height="148" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1626858060957" />
+    <state width="1237" height="148" key="GridCell.Tab.0.center" timestamp="1626858060957">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="211" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1626851875262" />
-    <state width="1237" height="211" key="GridCell.Tab.0.left" timestamp="1626851875261">
+    <state width="1237" height="148" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1626858060957" />
+    <state width="1237" height="148" key="GridCell.Tab.0.left" timestamp="1626858060956">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="211" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1626851875261" />
-    <state width="1237" height="211" key="GridCell.Tab.0.right" timestamp="1626851875263">
+    <state width="1237" height="148" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1626858060956" />
+    <state width="1237" height="148" key="GridCell.Tab.0.right" timestamp="1626858060957">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="211" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1626851875263" />
-    <state width="1237" height="148" key="GridCell.Tab.1.bottom" timestamp="1626773064458">
+    <state width="1237" height="148" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1626858060957" />
+    <state width="1237" height="148" key="GridCell.Tab.1.bottom" timestamp="1626858060958">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="148" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1626773064458" />
-    <state width="1237" height="148" key="GridCell.Tab.1.center" timestamp="1626773064457">
+    <state width="1237" height="148" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1626858060958" />
+    <state width="1237" height="148" key="GridCell.Tab.1.center" timestamp="1626858060958">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="148" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1626773064457" />
-    <state width="1237" height="148" key="GridCell.Tab.1.left" timestamp="1626773064457">
+    <state width="1237" height="148" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1626858060958" />
+    <state width="1237" height="148" key="GridCell.Tab.1.left" timestamp="1626858060958">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="148" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1626773064457" />
-    <state width="1237" height="148" key="GridCell.Tab.1.right" timestamp="1626773064457">
+    <state width="1237" height="148" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1626858060958" />
+    <state width="1237" height="148" key="GridCell.Tab.1.right" timestamp="1626858060958">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="148" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1626773064457" />
+    <state width="1237" height="148" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1626858060958" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1626443152819">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="142" y="0" key="SettingsEditor/0.0.1280.680@0.0.1280.680" timestamp="1626443152819" />
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1626851700118">
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2" timestamp="1626854550611">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1626851700118" />
+    <state x="233" y="73" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1626854550611" />
     <state x="452" y="118" key="chooseDestDirectoryDialog" timestamp="1626503850795">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

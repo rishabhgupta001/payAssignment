@@ -12,6 +12,7 @@ import android.os.Handler
 import android.provider.ContactsContract
 import android.util.Log
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -29,7 +30,6 @@ import com.sample.vkoelassign.utility.Utils
 import com.sample.vkoelassign.utility.toastShort
 
 
-
 /**
  *
  * Purpose – onBoarding Login Screen
@@ -45,6 +45,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private var userName: String = ""
     private var mAuth: FirebaseAuth? = null
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onClick(v: View?) {
         when (v?.id) {
             R.id.contacts_btn -> {
@@ -54,16 +55,20 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                     gettingContactsPermission()
             }
             R.id.login_btn -> {
-                binding.progressBar.visibility = View.VISIBLE
-                binding.loginBtn.isEnabled = false
-                Handler().postDelayed({
-                    binding.loginBtn.isEnabled = true
-                    val dataModel = LoginFormDataModel(
-                        binding.phoneNumbEditText.text.toString(),
-                        binding.passEditText.text.toString(), userName
-                    )
-                    viewModel.validate(dataModel)
-                }, 100)
+                if (Utils.isInternetAvailable(this@LoginActivity)) {
+                    binding.progressBar.visibility = View.VISIBLE
+                    binding.loginBtn.isEnabled = false
+                    Handler().postDelayed({
+                        binding.loginBtn.isEnabled = true
+                        val dataModel = LoginFormDataModel(
+                            binding.phoneNumbEditText.text.toString(),
+                            binding.passEditText.text.toString(), userName
+                        )
+                        viewModel.validate(dataModel)
+                    }, 100)
+                } else {
+                    this.toastShort(getString(R.string.text_make_sure_no_data_connection))
+                }
             }
 
             R.id.login_with_mobile_no_otp -> {

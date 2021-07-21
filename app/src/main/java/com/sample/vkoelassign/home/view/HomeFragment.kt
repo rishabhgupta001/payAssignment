@@ -1,15 +1,20 @@
 package com.sample.vkoelassign.home.view
 
 import android.content.Context
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.sample.vkoelassign.R
 import com.sample.vkoelassign.databinding.FragmentHomeBinding
 import com.sample.vkoelassign.home.view.adapter.HomePagerAdapter
 import com.sample.vkoelassign.onboarding.viewmodel.LoginViewModel
+import com.sample.vkoelassign.utility.Utils
+import com.sample.vkoelassign.utility.toastShort
 
 
 /**
@@ -46,11 +51,15 @@ class HomeFragment : Fragment() {
     /**
      * View Initialization
      */
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun init() {
-        binding.homeViewPager.adapter =
-            HomePagerAdapter(requireContext(), childFragmentManager)
-        binding.homeTabLayout.setupWithViewPager(binding.homeViewPager)
-
+        if (Utils.isInternetAvailable(context)) {
+            binding.homeViewPager.adapter =
+                HomePagerAdapter(requireContext(), childFragmentManager)
+            binding.homeTabLayout.setupWithViewPager(binding.homeViewPager)
+        } else {
+            context?.toastShort(getString(R.string.text_make_sure_no_data_connection))
+        }
     }
 
     override fun onResume() {
