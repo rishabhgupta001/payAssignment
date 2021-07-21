@@ -17,6 +17,13 @@ import com.sample.vkoelassign.data.network.User
 import com.sample.vkoelassign.home.view.adapter.CommentAdapter
 import com.sample.vkoelassign.utility.Utils
 
+/**
+ *
+ * Purpose – This screen code for Post Detail and MyFeed Detail
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class PostDetailFragment : Fragment() {
     private lateinit var binding: FragmentPostDetailBinding
     private lateinit var data: Post

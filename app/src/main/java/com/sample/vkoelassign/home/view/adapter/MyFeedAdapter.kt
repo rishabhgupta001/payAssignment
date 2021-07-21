@@ -16,6 +16,14 @@ import com.sample.vkoelassign.data.network.User
 import com.sample.vkoelassign.home.view.HomeFragmentDirections
 import com.sample.vkoelassign.utility.Utils
 
+
+/**
+ *
+ * Purpose – Adapter for MyFeedScreen
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class MyFeedAdapter(
     private var mContext: Context,
     private var mPost: List<Post>
@@ -50,7 +58,7 @@ class MyFeedAdapter(
                 }, 100)
             }
 
-            itemBinding.commentImgView.setOnClickListener {
+            /*itemBinding.commentImgView.setOnClickListener {
                 itemBinding.commentImgView.isEnabled = false
                 Handler().postDelayed({
                     itemBinding.commentImgView.isEnabled = true
@@ -61,7 +69,7 @@ class MyFeedAdapter(
                         Navigation.findNavController(itemBinding.root).navigate(action)
                     }
                 }, 100)
-            }
+            }*/
         }
 
         fun bind(position: Int) {

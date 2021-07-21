@@ -29,6 +29,14 @@ import com.sample.vkoelassign.utility.Utils
 import com.sample.vkoelassign.utility.toastShort
 
 
+
+/**
+ *
+ * Purpose – onBoarding Login Screen
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityLoginBinding
     private val PICK_CONTACT = 1

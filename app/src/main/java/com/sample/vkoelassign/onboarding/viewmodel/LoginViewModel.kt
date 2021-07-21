@@ -6,6 +6,14 @@ import androidx.lifecycle.MutableLiveData
 import com.sample.vkoelassign.data.network.LoginFormDataModel
 import com.sample.vkoelassign.utility.Utils
 
+
+/**
+ *
+ * Purpose – ViewModel for Login screen validations
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
     val loginFormLiveData: MutableLiveData<LoginFormDataModel> = MutableLiveData()
 

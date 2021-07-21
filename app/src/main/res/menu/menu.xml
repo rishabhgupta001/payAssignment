@@ -11,14 +11,14 @@
             android:id="@+id/home_frag"
             android:icon="@drawable/logout"
             android:title="@string/txt_x_list" />
-        <item
+       <!-- <item
             android:id="@+id/search_frag"
             android:icon="@drawable/logout"
-            android:title="@string/title_search" />
-        <item
+            android:title="@string/title_search" />-->
+        <!--<item
             android:id="@+id/addPost_frag"
             android:icon="@drawable/logout"
-            android:title="@string/title_add_post" />
+            android:title="@string/title_add_post" />-->
         <item
             android:id="@+id/nav_logout"
             android:icon="@drawable/logout"

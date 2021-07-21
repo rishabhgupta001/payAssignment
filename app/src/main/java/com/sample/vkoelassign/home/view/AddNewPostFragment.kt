@@ -27,6 +27,13 @@ import com.google.firebase.storage.UploadTask
 import com.sample.vkoelassign.utility.toastShort
 
 
+/**
+ *
+ * Purpose – This screen provide feature to add new post
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class AddNewPostFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentAddNewPostBinding
     private var myUrl = ""

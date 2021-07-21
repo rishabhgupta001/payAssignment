@@ -12,6 +12,13 @@ import com.sample.vkoelassign.home.view.adapter.HomePagerAdapter
 import com.sample.vkoelassign.onboarding.viewmodel.LoginViewModel
 
 
+/**
+ *
+ * Purpose – This screen contains 2 tabs:- MyFeed and MyPost
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class HomeFragment : Fragment() {
     private lateinit var binding: FragmentHomeBinding
     private lateinit var viewModel: LoginViewModel

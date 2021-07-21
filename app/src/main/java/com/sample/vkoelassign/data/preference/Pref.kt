@@ -4,8 +4,12 @@ import android.content.Context
 import android.content.SharedPreferences
 
 /**
- * Created by Rishabh Gupta on 4/4/19.
- */
+ *
+ * Purpose – SharedPreference class for offline storage
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 object Pref {
     private const val PREF_FILE_NAME = "com.sample.vkoelassign.pref"
     private const val IS_FIRST_TIME_LAUNCH = "IS_FIRST_TIME_LAUNCH"

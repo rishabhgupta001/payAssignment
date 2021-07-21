@@ -18,6 +18,13 @@ import com.sample.vkoelassign.home.view.adapter.MyFeedAdapter
 import com.sample.vkoelassign.utility.toastShort
 import kotlin.collections.ArrayList
 
+/**
+ *
+ * Purpose – This screen code for MyPost Screen
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class MyPostFragment : Fragment() {
     private lateinit var binding: FragmentMyPostBinding
     private var postAdapter: MyFeedAdapter? = null

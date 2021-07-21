@@ -10,6 +10,14 @@ import com.sample.vkoelassign.onboarding.view.LoginActivity
 import com.sample.vkoelassign.home.view.MainActivity
 import com.sample.vkoelassign.utility.Utils
 
+
+/**
+ *
+ * Purpose – Launcher Activity of this app
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class SplashActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySplashBinding
     override fun onCreate(savedInstanceState: Bundle?) {

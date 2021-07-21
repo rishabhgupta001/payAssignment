@@ -13,6 +13,13 @@ import com.sample.vkoelassign.data.network.Post
 import com.sample.vkoelassign.utility.Utils
 import com.sample.vkoelassign.utility.toastShort
 
+/**
+ *
+ * Purpose – This screen provide feature to add new comments on available post
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class CommentsFragment : Fragment(), View.OnClickListener {
     private lateinit var binding: FragmentCommentsBinding
     private var itemData: Post? = null

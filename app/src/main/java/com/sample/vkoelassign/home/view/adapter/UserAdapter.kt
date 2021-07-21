@@ -20,6 +20,14 @@ import com.sample.vkoelassign.utility.Utils
 import com.sample.vkoelassign.utility.toastShort
 import de.hdodenhof.circleimageview.CircleImageView
 
+
+/**
+ *
+ * Purpose – Adapter for Search Screen
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class UserAdapter(
     private var mContext: Context,
     private var mUser: List<User>, private var isFragment: Boolean = false

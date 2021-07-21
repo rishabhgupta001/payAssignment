@@ -17,6 +17,14 @@ import com.sample.vkoelassign.databinding.FragmentSearchBinding
 import com.sample.vkoelassign.data.network.User
 import com.sample.vkoelassign.home.view.adapter.UserAdapter
 
+
+/**
+ *
+ * Purpose – This screen code for Searching any user who posted post
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class SearchFragment : Fragment() {
     private lateinit var binding: FragmentSearchBinding
     private var userAdapter: UserAdapter? = null

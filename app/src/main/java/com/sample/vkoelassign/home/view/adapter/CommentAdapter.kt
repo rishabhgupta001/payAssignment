@@ -13,6 +13,14 @@ import com.sample.vkoelassign.data.network.Comment
 import com.sample.vkoelassign.data.network.User
 import com.sample.vkoelassign.utility.Utils
 
+
+/**
+ *
+ * Purpose – Adpter for Comment Screen
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class CommentAdapter(
     private var mContext: Context,
     private var mComment: List<Comment>

@@ -17,6 +17,13 @@ import com.sample.vkoelassign.data.network.Post
 import com.sample.vkoelassign.home.view.adapter.MyFeedAdapter
 import com.sample.vkoelassign.utility.toastShort
 
+/**
+ *
+ * Purpose – This screen code for MyFeedScreen
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class MyFeedFragment : Fragment() {
     private lateinit var binding: FragmentMyFeedBinding
     private var feedAdapter: MyFeedAdapter? = null

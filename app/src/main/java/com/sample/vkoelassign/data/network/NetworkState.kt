@@ -1,5 +1,13 @@
 package com.sample.vkoelassign.data.network
 
+
+/**
+ *
+ * Purpose –  gives status about network api's
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 @Suppress("DataClassPrivateConstructor")
 data class NetworkState private constructor(val statusCode: StatusCode, val msg: String? = null) {
 

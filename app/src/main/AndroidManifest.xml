@@ -19,7 +19,6 @@
         android:theme="@style/Theme.VkoelAssign"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-        <activity android:name=".home.view.PostDetailActivity"></activity>
         <activity android:name=".onboarding.view.OtpActivity" />
         <activity android:name=".onboarding.view.LoginActivity" />
         <activity android:name=".SplashActivity">

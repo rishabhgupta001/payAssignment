@@ -5,6 +5,15 @@ import android.view.View
 import android.widget.ProgressBar
 import android.widget.Toast
 
+
+
+/**
+ *
+ * Purpose – Common Extension Functions
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 fun Context.toastShort(msg: String) {
     Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
 }

@@ -27,6 +27,14 @@ import com.sample.vkoelassign.onboarding.view.LoginActivity
 import com.sample.vkoelassign.utility.Utils
 import de.hdodenhof.circleimageview.CircleImageView
 
+
+/**
+ *
+ * Purpose – This screen code for Home screen/dashboard
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     lateinit var binding: ActivityMainBinding
     private lateinit var headerViewLayout: View

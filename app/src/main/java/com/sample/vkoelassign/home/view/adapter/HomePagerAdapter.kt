@@ -8,6 +8,14 @@ import com.sample.vkoelassign.R
 import com.sample.vkoelassign.home.view.MyFeedFragment
 import com.sample.vkoelassign.home.view.MyPostFragment
 
+
+/**
+ *
+ * Purpose – Show 2 tabs as per below fragment creation on Home Screen
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class HomePagerAdapter(private val context: Context, fm: FragmentManager) :
     FragmentStatePagerAdapter(fm) {
     //Returns item at a particular position

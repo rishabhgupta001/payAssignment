@@ -1,5 +1,12 @@
 package com.sample.vkoelassign.data.network
 
+/**
+ *
+ * Purpose – Pojo class For login validation
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 data class LoginFormDataModel(
     val mobileNum: String,
     val password: String,

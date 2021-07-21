@@ -21,6 +21,15 @@ import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.sample.vkoelassign.R
 
+
+
+/**
+ *
+ * Purpose – Common functions
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 object Utils {
     /**
      * Method to set Image with placeholder

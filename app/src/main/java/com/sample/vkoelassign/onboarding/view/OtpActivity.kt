@@ -22,6 +22,13 @@ import com.sample.vkoelassign.utility.toastShort
 import java.util.concurrent.TimeUnit
 
 
+/**
+ *
+ * Purpose – onBoarding Otp Screen
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class OtpActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityOtpBinding
     private var mAuth: FirebaseAuth? = null

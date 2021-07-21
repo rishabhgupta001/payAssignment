@@ -10,6 +10,13 @@ import android.net.NetworkCapabilities
 import com.sample.vkoelassign.utility.NoInternetException
 import com.sample.vkoelassign.R
 
+/**
+ *
+ * Purpose –  shows no internet error in responses of restApis's
+ *
+ * @author Rishabh Gupta
+ *
+ * */
 class NetworkConnectionInterceptor(context: Context) : Interceptor {
     private val applicationContext = context.applicationContext
 
