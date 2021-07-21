@@ -21,13 +21,13 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.sample.vkoelassign.R
 import com.sample.vkoelassign.databinding.ActivityMainBinding
-import com.sample.vkoelassign.network.User
-import com.sample.vkoelassign.utility.Pref
+import com.sample.vkoelassign.data.network.User
+import com.sample.vkoelassign.data.preference.Pref
 import com.sample.vkoelassign.utility.Utils
 import de.hdodenhof.circleimageview.CircleImageView
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
-    private lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
     private lateinit var headerViewLayout: View
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -108,11 +108,11 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 }
 
                 R.id.postDetail_frag -> {
-                    Utils.showFadeInAnimOnText(
+                    /*Utils.showFadeInAnimOnText(
                         this,
                         binding.toolbarTitle,
                         getString(R.string.title_post_detail)
-                    )
+                    )*/
                     binding.toolbar.title = ""
                     binding.toolbar.setNavigationIcon(R.drawable.img_arrow_back_white)
                 }
@@ -183,7 +183,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             dailog.dismiss()
             Pref.clearPref(this)
 
-            val mainIntent = Intent(this@MainActivity, OtpActivity::class.java)
+            //val mainIntent = Intent(this@MainActivity, OtpActivity::class.java)
+            val mainIntent = Intent(this@MainActivity, LoginActivity::class.java)
             Utils.launchNewActivity(this@MainActivity, mainIntent, true)
             finish()
         }

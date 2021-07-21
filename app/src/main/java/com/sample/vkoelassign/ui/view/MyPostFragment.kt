@@ -12,12 +12,10 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.sample.vkoelassign.R
-import com.sample.vkoelassign.databinding.FragmentMyFeedBinding
 import com.sample.vkoelassign.databinding.FragmentMyPostBinding
-import com.sample.vkoelassign.network.Post
+import com.sample.vkoelassign.data.network.Post
 import com.sample.vkoelassign.ui.view.adapter.MyFeedAdapter
 import com.sample.vkoelassign.utility.toastShort
-import java.util.*
 import kotlin.collections.ArrayList
 
 class MyPostFragment : Fragment() {
@@ -66,14 +64,21 @@ class MyPostFragment : Fragment() {
                     for (item in dataSnapshot.children) {
                         val post = item.getValue(Post::class.java)
                         if (post?.postPublisher == FirebaseAuth.getInstance().currentUser?.uid) {
+                            post?.screenTitle = getString(R.string.title_post_detail)
                             (postList as ArrayList<Post>).add(post!!)
                         }
                         postAdapter?.notifyDataSetChanged()
                         binding.progressBar.visibility = View.GONE
                     }
+
+                    if (!(postList?.size!! > 0))
+                        binding.noResultTextView.visibility = View.VISIBLE
+                    else
+                        binding.noResultTextView.visibility = View.GONE
                 }
             }
             override fun onCancelled(p0: DatabaseError) {
+                context?.toastShort(getString(R.string.txt_something_went_wrong))
             }
         })
     }

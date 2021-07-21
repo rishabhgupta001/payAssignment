@@ -15,6 +15,9 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.sample.vkoelassign.R
 import com.sample.vkoelassign.databinding.ActivityOtpBinding
+import com.sample.vkoelassign.utility.Constants
+import com.sample.vkoelassign.utility.Constants.PHONE_NUM
+import com.sample.vkoelassign.utility.Utils
 import com.sample.vkoelassign.utility.toastShort
 import java.util.concurrent.TimeUnit
 
@@ -28,9 +31,9 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
         when (v?.id) {
             R.id.idBtnGetOtp -> {
                 binding.idEdtOtp.setText("")
-                if (TextUtils.isEmpty(binding.idEdtPhoneNumber.getText().toString())) {
+                if (!Utils.isValidMobile(binding.idEdtPhoneNumber.getText().toString()))
                     toastShort("Please enter a valid phone number")
-                } else {
+                else {
                     val phone = "+91" + binding.idEdtPhoneNumber.getText().toString()
                     sendVerificationCode(phone)
                 }
@@ -54,6 +57,14 @@ class OtpActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun init() {
+        if (intent != null && intent.extras != null && !intent.extras?.getString(PHONE_NUM)
+                .isNullOrEmpty()
+        ) {
+            val bundle = intent.extras
+            val phoneNum = bundle!!.getString(PHONE_NUM)
+            if (phoneNum != getString(R.string.txt_pay_dummy_phone_no))
+                binding.idEdtPhoneNumber.setText(phoneNum)
+        }
         // below line is for getting instance
         // of our FirebaseAuth.
         mAuth = FirebaseAuth.getInstance()

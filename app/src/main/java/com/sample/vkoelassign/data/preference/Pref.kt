@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.utility
+package com.sample.vkoelassign.data.preference
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -11,7 +11,6 @@ object Pref {
     private const val IS_FIRST_TIME_LAUNCH = "IS_FIRST_TIME_LAUNCH"
     const val EMAIL_ID = "user_email_id"
     const val NAME = "user_name"
-    const val PHONE_NUM = "phone_num"
 
     private lateinit var sharedPreferences: SharedPreferences
 

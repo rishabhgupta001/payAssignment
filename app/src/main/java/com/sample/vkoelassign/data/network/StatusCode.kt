@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.network
+package com.sample.vkoelassign.data.network
 
 enum class StatusCode {
     START,

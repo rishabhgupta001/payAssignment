@@ -27,7 +27,7 @@
     <string name="text_preset_passwrd">Preset Password</string>
     <string name="text_forgot_passwrd">I don’t have or remember my password</string>
     <string name="text_new_user">New User?</string>
-    <string name="text_sign_up">Sign Up</string>
+    <string name="text_sign_up">Login with Mobile number and OTP</string>
     <string name="otp_message">Send an OTP to verify</string>
     <string name="login">Login</string>
     <string name="txt_follow">Follow</string>
@@ -37,7 +37,8 @@
     <string name="txt_until_you">Until you grant the permission, we canot display the names</string>
     <string name="txt_enter_your">Enter your mobile number below or choose random number from your contacts</string>
     <string name="txt_open_contacts">Open contacts</string>
-    <string name="txt_pay_passwrd">pay@123</string>
+    <string name="txt_pay_passwrd">123456</string>
+    <string name="txt_pay_dummy_phone_no">1234567890</string>
     <string name="txt_logout">Logout</string>
     <string name="text_no">No</string>
     <string name="text_yes">Yes</string>
@@ -45,8 +46,11 @@
     <string name="title_search">Search</string>
     <string name="title_add_post">Add Post</string>
     <string name="title_post_detail">Post Detail</string>
+    <string name="title_feed_detail">Feed Detail</string>
     <string name="title_comment">Comment</string>
     <string name="title_add">add</string>
+    <string name="txt_something_went_wrong">Something went wrong, please try again later</string>
+    <string name="txt_no_result_incr_followers">No result found please increase your followers</string>
 
 
 </resources>

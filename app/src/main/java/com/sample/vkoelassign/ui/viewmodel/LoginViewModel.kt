@@ -1,18 +1,10 @@
 package com.sample.vkoelassign.ui.viewmodel
 
-import android.app.Activity
 import android.app.Application
-import android.content.Intent
-import android.view.View
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.sample.vkoelassign.R
-import com.sample.vkoelassign.application.MyApplication
-import com.sample.vkoelassign.network.LoginFormDataModel
-import com.sample.vkoelassign.ui.view.MainActivity
-import com.sample.vkoelassign.utility.Pref
+import com.sample.vkoelassign.data.network.LoginFormDataModel
 import com.sample.vkoelassign.utility.Utils
-import io.reactivex.schedulers.Schedulers
 
 class LoginViewModel(application: Application) : AndroidViewModel(application) {
     val loginFormLiveData: MutableLiveData<LoginFormDataModel> = MutableLiveData()

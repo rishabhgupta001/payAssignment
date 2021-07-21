@@ -93,8 +93,8 @@
                 android:hint="@string/text_preset_passwrd"
                 android:imeOptions="actionDone"
                 android:inputType="textPassword"
-                android:maxLines="1"
                 android:maxLength="16"
+                android:maxLines="1"
                 android:singleLine="true" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -167,13 +167,15 @@
                 android:layout_marginBottom="@dimen/_20sdp"
                 android:text="@string/text_new_user"
                 android:textColor="@color/colorFontLight"
-                android:textSize="@dimen/_11sdp" />
+                android:textSize="@dimen/_11sdp"
+                android:visibility="gone" />
 
             <TextView
-                android:id="@+id/signUp_text_view"
+                android:id="@+id/login_with_mobile_no_otp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_16sdp"
+                android:foreground="?android:attr/selectableItemBackground"
                 android:layout_marginBottom="@dimen/_20sdp"
                 android:background="?android:attr/selectableItemBackground"
                 android:text="@string/text_sign_up"
@@ -183,6 +185,19 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

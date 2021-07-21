@@ -9,7 +9,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.sample.vkoelassign.R
 import com.sample.vkoelassign.databinding.FragmentCommentsBinding
-import com.sample.vkoelassign.network.Post
+import com.sample.vkoelassign.data.network.Post
 import com.sample.vkoelassign.utility.Utils
 import com.sample.vkoelassign.utility.toastShort
 

@@ -54,7 +54,7 @@
         <argument
             android:name="Post"
             android:defaultValue="@null"
-            app:argType="com.sample.vkoelassign.network.Post"
+            app:argType="com.sample.vkoelassign.data.network.Post"
             app:nullable="true" />
     </fragment>
 
@@ -66,7 +66,7 @@
         <argument
             android:name="Post"
             android:defaultValue="@null"
-            app:argType="com.sample.vkoelassign.network.Post"
+            app:argType="com.sample.vkoelassign.data.network.Post"
             app:nullable="true" />
     </fragment>
 

@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.network
+package com.sample.vkoelassign.data.network
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize
@@ -9,4 +9,5 @@ data class Post(
     var postImage: String = "",
     var postDescription: String = "",
     var postPublisher: String = "",
-): Parcelable
+    var screenTitle: String = ""
+) : Parcelable

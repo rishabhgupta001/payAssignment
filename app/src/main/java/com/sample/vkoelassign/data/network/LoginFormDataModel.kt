@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.network
+package com.sample.vkoelassign.data.network
 
 data class LoginFormDataModel(
     val mobileNum: String,

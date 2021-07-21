@@ -1,22 +1,17 @@
 package com.sample.vkoelassign.ui.view.adapter
 
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.sample.vkoelassign.databinding.ItemCommentBinding
-import com.sample.vkoelassign.network.Comment
-import com.sample.vkoelassign.network.Post
-import com.sample.vkoelassign.network.User
+import com.sample.vkoelassign.data.network.Comment
+import com.sample.vkoelassign.data.network.User
 import com.sample.vkoelassign.utility.Utils
-import com.sample.vkoelassign.utility.toastShort
 
 class CommentAdapter(
     private var mContext: Context,

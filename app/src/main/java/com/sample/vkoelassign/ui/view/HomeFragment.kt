@@ -49,7 +49,6 @@ class HomeFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        context?.toastShort("Home on Resume called")
         init()
     }
 

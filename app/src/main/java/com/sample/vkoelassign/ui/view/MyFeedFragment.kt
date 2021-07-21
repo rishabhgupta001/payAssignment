@@ -11,8 +11,9 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.sample.vkoelassign.R
 import com.sample.vkoelassign.databinding.FragmentMyFeedBinding
-import com.sample.vkoelassign.network.Post
+import com.sample.vkoelassign.data.network.Post
 import com.sample.vkoelassign.ui.view.adapter.MyFeedAdapter
 import com.sample.vkoelassign.utility.toastShort
 
@@ -68,10 +69,20 @@ class MyFeedFragment : Fragment() {
                         snapshot.key?.let { (followingList as ArrayList<String>).add(it) }
                     }
                     retrievePost()
+
+                    if (!(followingList?.size!! > 0)) {
+                        binding.progressBar.visibility = View.GONE
+                        binding.noResultTextView.visibility = View.VISIBLE
+                    } else {
+                        binding.progressBar.visibility = View.GONE
+                        binding.noResultTextView.visibility = View.GONE
+                    }
                 }
             }
 
             override fun onCancelled(p0: DatabaseError) {
+                context?.toastShort(getString(R.string.txt_something_went_wrong))
+                binding.progressBar.visibility = View.GONE
             }
         })
     }
@@ -94,15 +105,27 @@ class MyFeedFragment : Fragment() {
                     for (id in (followingList as ArrayList<String>)) {
 
                         if (post?.postPublisher == id) {
+                            post.screenTitle = getString(R.string.title_feed_detail)
                             postList?.add(post)
                         }
                         feedAdapter?.notifyDataSetChanged()
                         binding.progressBar.visibility = View.GONE
                     }
                 }
+
+                if (!(postList?.size!! > 0)) {
+                    binding.progressBar.visibility = View.GONE
+                    binding.noResultTextView.visibility = View.VISIBLE
+                } else {
+                    binding.progressBar.visibility = View.GONE
+                    binding.noResultTextView.visibility = View.GONE
+                }
+
             }
 
             override fun onCancelled(p0: DatabaseError) {
+                context?.toastShort(getString(R.string.txt_something_went_wrong))
+                binding.progressBar.visibility = View.GONE
             }
         })
     }

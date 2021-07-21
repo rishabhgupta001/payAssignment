@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.network
+package com.sample.vkoelassign.data.network
 
 @Suppress("DataClassPrivateConstructor")
 data class NetworkState private constructor(val statusCode: StatusCode, val msg: String? = null) {

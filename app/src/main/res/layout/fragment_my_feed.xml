@@ -10,10 +10,10 @@
         android:id="@+id/feed_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:overScrollMode="never"
-        android:scrollbars="none"
         android:layout_marginTop="@dimen/_3sdp"
-        android:layout_marginBottom="@dimen/_3sdp"/>
+        android:layout_marginBottom="@dimen/_3sdp"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -23,6 +23,20 @@
         android:layout_gravity="center"
         android:indeterminate="true"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/no_result_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_12sdp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:text="@string/txt_no_result_incr_followers"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

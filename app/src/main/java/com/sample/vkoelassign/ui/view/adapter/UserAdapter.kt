@@ -15,9 +15,7 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.sample.vkoelassign.R
-import com.sample.vkoelassign.application.MyApplication
-import com.sample.vkoelassign.network.User
-import com.sample.vkoelassign.utility.Pref
+import com.sample.vkoelassign.data.network.User
 import com.sample.vkoelassign.utility.Utils
 import com.sample.vkoelassign.utility.toastShort
 import de.hdodenhof.circleimageview.CircleImageView

@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.network
+package com.sample.vkoelassign.data.network
 
 import com.sample.vkoelassign.utility.Constants
 import okhttp3.OkHttpClient

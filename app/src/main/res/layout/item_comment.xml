@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_3sdp"
     app:cardElevation="@dimen/_2sdp"
+    android:foreground="?android:attr/selectableItemBackground"
     app:layout_constraintTop_toTopOf="parent">
 
     <androidx.constraintlayout.widget.ConstraintLayout

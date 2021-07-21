@@ -16,13 +16,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 import com.sample.vkoelassign.R
-import com.sample.vkoelassign.application.MyApplication
 import com.sample.vkoelassign.databinding.ActivityLoginBinding
-import com.sample.vkoelassign.network.LoginFormDataModel
+import com.sample.vkoelassign.data.network.LoginFormDataModel
 import com.sample.vkoelassign.ui.viewmodel.LoginViewModel
 import com.sample.vkoelassign.utility.Constants.PERMISSIONS_REQUEST_READ_CONTACTS
-import com.sample.vkoelassign.utility.Pref
+import com.sample.vkoelassign.utility.Constants.PHONE_NUM
 import com.sample.vkoelassign.utility.Utils
 import com.sample.vkoelassign.utility.toastShort
 
@@ -44,6 +45,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                     gettingContactsPermission()
             }
             R.id.login_btn -> {
+                binding.progressBar.visibility = View.VISIBLE
                 binding.loginBtn.isEnabled = false
                 Handler().postDelayed({
                     binding.loginBtn.isEnabled = true
@@ -53,6 +55,12 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                     )
                     viewModel.validate(dataModel)
                 }, 100)
+            }
+
+            R.id.login_with_mobile_no_otp -> {
+                val mainIntent = Intent(this@LoginActivity, OtpActivity::class.java)
+                Utils.launchNewActivity(this@LoginActivity, mainIntent, true)
+                finish()
             }
         }
     }
@@ -69,9 +77,13 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         mAuth = FirebaseAuth.getInstance()
         binding.contactsBtn.setOnClickListener(this)
         binding.loginBtn.setOnClickListener(this)
+        binding.loginWithMobileNoOtp.setOnClickListener(this)
         // Read and show the contacts
         gettingContactsPermission()
         observeLoginFormValidationResponseData()
+        //test credentials
+        binding.phoneNumbEditText.setText(getString(R.string.txt_pay_dummy_phone_no))
+        binding.passEditText.setText(getString(R.string.txt_pay_passwrd))
     }
 
     private fun gettingContactsPermission() {
@@ -161,24 +173,78 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         viewModel.loginFormLiveData.observe(this, Observer {
             when (it?.isValid) {
                 true -> {
-                    Pref.setString(MyApplication.mInstance, Pref.NAME, it.name)
-                    Pref.setString(MyApplication.mInstance, Pref.PHONE_NUM, it.mobileNum)
 
-                    val mainIntent = Intent(this@LoginActivity, MainActivity::class.java)
-                    startActivity(mainIntent)
-                    finish()
-                    overridePendingTransition(R.anim.enter_activity, R.anim.exit_activity)
+                    if (binding.phoneNumbEditText.text.toString() == "1234567890") {
+                        val emailId = "${binding.phoneNumbEditText.text.toString()}@gmail.com"
+                        val presetPass = getString(R.string.txt_pay_passwrd)
+
+                        //logging in the user
+                        FirebaseAuth.getInstance().signInWithEmailAndPassword(emailId, presetPass)
+                            .addOnCompleteListener(this, { task ->
+                                binding.progressBar.visibility = View.GONE
+                                //if the task is successfull
+                                if (task.isSuccessful) {
+                                    //start the profile activity
+                                    val mainIntent =
+                                        Intent(this@LoginActivity, MainActivity::class.java)
+                                    Utils.launchNewActivity(this@LoginActivity, mainIntent, true)
+                                    finish()
+
+                                    //saveUserInfo("", "", "")
+
+                                } else {
+                                    binding.progressBar.visibility = View.GONE
+                                    // displaying an error message to the user.
+                                    toastShort("${task.exception?.message}")
+                                }
+                            })
+                    } else {
+                        val mainIntent = Intent(this@LoginActivity, OtpActivity::class.java)
+                        mainIntent.putExtra(PHONE_NUM, binding.phoneNumbEditText.text.toString())
+                        Utils.launchNewActivity(this@LoginActivity, mainIntent, true)
+                        finish()
+                    }
                 }
                 false -> {
+                    binding.progressBar.visibility = View.GONE
                     toastShort(it.error)
                 }
             }
         })
     }
 
-    private fun createUserAccount(){
-        val auth: FirebaseAuth = FirebaseAuth.getInstance()
-        auth
+    private fun saveUserInfo(fullName: String, userName: String, email: String) {
+        val currentUserId = FirebaseAuth.getInstance().currentUser?.uid
+        val userRef: DatabaseReference = FirebaseDatabase.getInstance().reference.child("Users")
 
+        val userMap = HashMap<String, Any>()
+        userMap["uid"] = currentUserId!!
+        userMap["bio"] = "Hey I am tester"
+        userMap["email"] = "tester@gmail.com"
+        userMap["fullName"] = "tester qa"
+        userMap["userName"] = "testerQa"
+        userMap["image"] =
+            "https://firebasestorage.googleapis.com/v0/b/payassignment-df7db.appspot.com/o/Default%20Images%2Flaptop_2.jpg?alt=media&token=d41f3103-f463-4afc-b183-53182cf5f686"
+
+        userRef.child(currentUserId).setValue(userMap)
+            .addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    toastShort("Account created successfully")
+
+                    //makeUserFollowItself(currentUserId)
+
+                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                    startActivity(intent)
+                    finish()
+                } else {
+                    //binding.progressBar.visibility = View.GONE
+                    // if the code is not correct then we are
+                    // displaying an error message to the user.
+                    toastShort("${task.exception?.message}")
+                    FirebaseAuth.getInstance().signOut()
+                }
+            }
     }
 }

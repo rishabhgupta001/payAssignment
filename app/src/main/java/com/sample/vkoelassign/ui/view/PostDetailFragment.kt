@@ -11,9 +11,9 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.sample.vkoelassign.databinding.FragmentPostDetailBinding
-import com.sample.vkoelassign.network.Comment
-import com.sample.vkoelassign.network.Post
-import com.sample.vkoelassign.network.User
+import com.sample.vkoelassign.data.network.Comment
+import com.sample.vkoelassign.data.network.Post
+import com.sample.vkoelassign.data.network.User
 import com.sample.vkoelassign.ui.view.adapter.CommentAdapter
 import com.sample.vkoelassign.utility.Utils
 
@@ -41,6 +41,8 @@ class PostDetailFragment : Fragment() {
     private fun init() {
         arguments?.let {
             data = PostDetailFragmentArgs.fromBundle(it).post!!
+
+            (activity as MainActivity).binding.toolbarTitle.text = data.screenTitle
 
             //binding.descriptionTextView.text = data.postDescription
             Utils.showFadeInAnimOnText(requireContext(), binding.descriptionTextView, data.postDescription)
