@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.ui.view.adapter
+package com.sample.vkoelassign.home.view.adapter
 
 import android.content.Context
 import android.view.LayoutInflater

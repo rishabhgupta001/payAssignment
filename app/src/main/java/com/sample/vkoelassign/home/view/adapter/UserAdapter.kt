@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.ui.view.adapter
+package com.sample.vkoelassign.home.view.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -26,7 +26,7 @@ class UserAdapter(
 ) : RecyclerView.Adapter<UserAdapter.ViewHolder>() {
     private var firebaseUser: FirebaseUser? = FirebaseAuth.getInstance().currentUser
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(mContext).inflate(R.layout.user_item_layout, parent, false)
         return ViewHolder(view)
     }
@@ -35,7 +35,7 @@ class UserAdapter(
         return mUser.size
     }
 
-    override fun onBindViewHolder(holder: UserAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(position)
     }
 

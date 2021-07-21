@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.ui.view
+package com.sample.vkoelassign.onboarding.view
 
 import android.Manifest
 import android.app.Activity
@@ -19,9 +19,10 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.sample.vkoelassign.R
-import com.sample.vkoelassign.databinding.ActivityLoginBinding
 import com.sample.vkoelassign.data.network.LoginFormDataModel
-import com.sample.vkoelassign.ui.viewmodel.LoginViewModel
+import com.sample.vkoelassign.databinding.ActivityLoginBinding
+import com.sample.vkoelassign.home.view.MainActivity
+import com.sample.vkoelassign.onboarding.viewmodel.LoginViewModel
 import com.sample.vkoelassign.utility.Constants.PERMISSIONS_REQUEST_READ_CONTACTS
 import com.sample.vkoelassign.utility.Constants.PHONE_NUM
 import com.sample.vkoelassign.utility.Utils

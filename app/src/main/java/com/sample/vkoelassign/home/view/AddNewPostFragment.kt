@@ -1,18 +1,15 @@
-package com.sample.vkoelassign.ui.view
+package com.sample.vkoelassign.home.view
 
-import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.canhub.cropper.CropImage
 import com.canhub.cropper.CropImageContract
 import com.canhub.cropper.CropImageView
 import com.canhub.cropper.options
@@ -73,7 +70,6 @@ class AddNewPostFragment : Fragment(), View.OnClickListener {
         if (result.isSuccessful) {
             // use the returned uri
             val uriContent = result.uriContent
-            val uriFilePath = result.getUriFilePath(requireContext()) // optional usage
             binding.postImgView.setImageURI(uriContent)
             imageUri = uriContent
         } else {

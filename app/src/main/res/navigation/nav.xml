@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home_frag"
-        android:name="com.sample.vkoelassign.ui.view.HomeFragment"
+        android:name="com.sample.vkoelassign.home.view.HomeFragment"
         android:label="@string/txt_x_list"
         tools:layout="@layout/fragment_home">
 
@@ -30,25 +30,25 @@
 
     <fragment
         android:id="@+id/myfeed_frag"
-        android:name="com.sample.vkoelassign.ui.view.MyFeedFragment"
+        android:name="com.sample.vkoelassign.home.view.MyFeedFragment"
         android:label="@string/txt_my_feed"
         tools:layout="@layout/fragment_my_feed" />
 
     <fragment
         android:id="@+id/search_frag"
-        android:name="com.sample.vkoelassign.ui.view.SearchFragment"
+        android:name="com.sample.vkoelassign.home.view.SearchFragment"
         android:label="@string/title_search"
         tools:layout="@layout/fragment_search" />
 
     <fragment
         android:id="@+id/addPost_frag"
-        android:name="com.sample.vkoelassign.ui.view.AddNewPostFragment"
+        android:name="com.sample.vkoelassign.home.view.AddNewPostFragment"
         android:label="@string/title_add_post"
         tools:layout="@layout/fragment_add_new_post" />
 
     <fragment
         android:id="@+id/postDetail_frag"
-        android:name="com.sample.vkoelassign.ui.view.PostDetailFragment"
+        android:name="com.sample.vkoelassign.home.view.PostDetailFragment"
         android:label="@string/title_post_detail"
         tools:layout="@layout/fragment_post_detail">
         <argument
@@ -60,7 +60,7 @@
 
     <fragment
         android:id="@+id/comment_frag"
-        android:name="com.sample.vkoelassign.ui.view.CommentsFragment"
+        android:name="com.sample.vkoelassign.home.view.CommentsFragment"
         android:label="@string/title_comment"
         tools:layout="@layout/fragment_comments">
         <argument

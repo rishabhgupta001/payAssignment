@@ -1,13 +1,12 @@
-package com.sample.vkoelassign.ui.view.adapter
+package com.sample.vkoelassign.home.view.adapter
 
 import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import com.sample.vkoelassign.R
-import com.sample.vkoelassign.ui.view.MyFeedFragment
-import com.sample.vkoelassign.ui.view.MyPostFragment
-import com.sample.vkoelassign.ui.view.SearchFragment
+import com.sample.vkoelassign.home.view.MyFeedFragment
+import com.sample.vkoelassign.home.view.MyPostFragment
 
 class HomePagerAdapter(private val context: Context, fm: FragmentManager) :
     FragmentStatePagerAdapter(fm) {

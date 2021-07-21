@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.ui.viewmodel
+package com.sample.vkoelassign.onboarding.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel

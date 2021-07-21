@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.ui.view
+package com.sample.vkoelassign.home.view
 
 import android.content.Context
 import android.os.Bundle
@@ -8,9 +8,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.sample.vkoelassign.databinding.FragmentHomeBinding
-import com.sample.vkoelassign.ui.view.adapter.HomePagerAdapter
-import com.sample.vkoelassign.ui.viewmodel.LoginViewModel
-import com.sample.vkoelassign.utility.toastShort
+import com.sample.vkoelassign.home.view.adapter.HomePagerAdapter
+import com.sample.vkoelassign.onboarding.viewmodel.LoginViewModel
 
 
 class HomeFragment : Fragment() {

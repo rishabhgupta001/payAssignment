@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.ui.view
+package com.sample.vkoelassign.home.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,7 +14,7 @@ import com.sample.vkoelassign.databinding.FragmentPostDetailBinding
 import com.sample.vkoelassign.data.network.Comment
 import com.sample.vkoelassign.data.network.Post
 import com.sample.vkoelassign.data.network.User
-import com.sample.vkoelassign.ui.view.adapter.CommentAdapter
+import com.sample.vkoelassign.home.view.adapter.CommentAdapter
 import com.sample.vkoelassign.utility.Utils
 
 class PostDetailFragment : Fragment() {

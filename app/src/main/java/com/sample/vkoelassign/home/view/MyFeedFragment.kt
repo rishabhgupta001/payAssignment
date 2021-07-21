@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.ui.view
+package com.sample.vkoelassign.home.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,7 +14,7 @@ import com.google.firebase.database.ValueEventListener
 import com.sample.vkoelassign.R
 import com.sample.vkoelassign.databinding.FragmentMyFeedBinding
 import com.sample.vkoelassign.data.network.Post
-import com.sample.vkoelassign.ui.view.adapter.MyFeedAdapter
+import com.sample.vkoelassign.home.view.adapter.MyFeedAdapter
 import com.sample.vkoelassign.utility.toastShort
 
 class MyFeedFragment : Fragment() {

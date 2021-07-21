@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.ui.view
+package com.sample.vkoelassign.home.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -20,9 +20,10 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.sample.vkoelassign.R
-import com.sample.vkoelassign.databinding.ActivityMainBinding
 import com.sample.vkoelassign.data.network.User
 import com.sample.vkoelassign.data.preference.Pref
+import com.sample.vkoelassign.databinding.ActivityMainBinding
+import com.sample.vkoelassign.onboarding.view.LoginActivity
 import com.sample.vkoelassign.utility.Utils
 import de.hdodenhof.circleimageview.CircleImageView
 

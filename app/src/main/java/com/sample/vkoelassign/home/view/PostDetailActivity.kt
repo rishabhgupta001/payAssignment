@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.ui.view
+package com.sample.vkoelassign.home.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

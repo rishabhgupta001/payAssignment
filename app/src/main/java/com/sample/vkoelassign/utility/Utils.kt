@@ -17,12 +17,9 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
-import androidx.core.content.ContextCompat.startActivity
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.sample.vkoelassign.R
-import com.sample.vkoelassign.SplashActivity
-import com.sample.vkoelassign.ui.view.LoginActivity
 
 object Utils {
     /**

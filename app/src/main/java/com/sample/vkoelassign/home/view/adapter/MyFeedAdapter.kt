@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.ui.view.adapter
+package com.sample.vkoelassign.home.view.adapter
 
 import android.content.Context
 import android.os.Handler
@@ -13,7 +13,7 @@ import com.google.firebase.database.ValueEventListener
 import com.sample.vkoelassign.databinding.ItemFeedLayoutBinding
 import com.sample.vkoelassign.data.network.Post
 import com.sample.vkoelassign.data.network.User
-import com.sample.vkoelassign.ui.view.HomeFragmentDirections
+import com.sample.vkoelassign.home.view.HomeFragmentDirections
 import com.sample.vkoelassign.utility.Utils
 
 class MyFeedAdapter(

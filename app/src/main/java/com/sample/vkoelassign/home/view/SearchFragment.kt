@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.ui.view
+package com.sample.vkoelassign.home.view
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -15,7 +15,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.sample.vkoelassign.databinding.FragmentSearchBinding
 import com.sample.vkoelassign.data.network.User
-import com.sample.vkoelassign.ui.view.adapter.UserAdapter
+import com.sample.vkoelassign.home.view.adapter.UserAdapter
 
 class SearchFragment : Fragment() {
     private lateinit var binding: FragmentSearchBinding

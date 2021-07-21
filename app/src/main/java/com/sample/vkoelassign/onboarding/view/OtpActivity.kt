@@ -1,4 +1,4 @@
-package com.sample.vkoelassign.ui.view
+package com.sample.vkoelassign.onboarding.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,7 +15,7 @@ import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.sample.vkoelassign.R
 import com.sample.vkoelassign.databinding.ActivityOtpBinding
-import com.sample.vkoelassign.utility.Constants
+import com.sample.vkoelassign.home.view.MainActivity
 import com.sample.vkoelassign.utility.Constants.PHONE_NUM
 import com.sample.vkoelassign.utility.Utils
 import com.sample.vkoelassign.utility.toastShort

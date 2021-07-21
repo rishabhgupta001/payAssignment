@@ -19,9 +19,9 @@
         android:theme="@style/Theme.VkoelAssign"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.view.PostDetailActivity"></activity>
-        <activity android:name=".ui.view.OtpActivity" />
-        <activity android:name=".ui.view.LoginActivity" />
+        <activity android:name=".home.view.PostDetailActivity"></activity>
+        <activity android:name=".onboarding.view.OtpActivity" />
+        <activity android:name=".onboarding.view.LoginActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.view.MainActivity" />
+        <activity android:name=".home.view.MainActivity" />
         <activity
             android:name="com.canhub.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
